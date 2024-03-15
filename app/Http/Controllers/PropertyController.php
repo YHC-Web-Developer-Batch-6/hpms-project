@@ -12,7 +12,13 @@ class PropertyController extends Controller
      */
     public function index()
     {
-        dd('p');
+       $properties = Property::all();
+
+    //    dd($properties);
+
+       return view('property.index', [
+        'properties' => $properties
+       ]);
     }
 
     /**
