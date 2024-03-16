@@ -20,6 +20,7 @@ class PropertySeeder extends Seeder
             Property::create([
                 'name' => fake()->company(),
                 'price' => fake()->numberBetween(10000000, 100000000),
+                'address' => fake()->address(),
                 'size' => fake()->numberBetween(1, 100),
                 'facility' => fake()->paragraph(),
                 'is_sold' => 0,
