@@ -7,11 +7,25 @@
 
 
 
-    <div class="ms-60 h-[1600px]">
-        <div class="max-w-7xl mx-auto sm:px-6 lg:px-8 mt-5">
-            <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
-                <div class="p-6 text-gray-900">
-                    {{ __("You're logged in!") }}
+
+    <div class="p-4 sm:ml-64">
+        <div class="p-4 ">
+            <div class="grid grid-cols-3 gap-4 mb-4">
+                <div class="flex justify-start h-36  bg-gray-50 dark:bg-white shadow-xl rounded-[16px]">
+                    <p class="text-2xl text-gray-400 dark:text-black p-8">
+                        Property
+
+                    </p>
+                </div>
+                <div class="flex items-center justify-center h-36  bg-gray-50 dark:bg-white shadow-xl rounded-[16px]">
+                    <p class="text-2xl text-gray-400 dark:text-black">
+
+                    </p>
+                </div>
+                <div class="flex items-center justify-center h-36  bg-gray-50 dark:bg-white shadow-xl rounded-[16px]">
+                    <p class="text-2xl text-gray-400 dark:text-black">
+
+                    </p>
                 </div>
             </div>
         </div>
