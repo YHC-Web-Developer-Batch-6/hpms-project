@@ -16,6 +16,7 @@ return new class extends Migration
             $table->foreignId('user_id')->constrained('users')->cascadeOnDelete();
             $table->string('name');
             $table->string('price');
+            $table->string('address');
             $table->string('size');
             $table->text('facility');
             $table->boolean('is_sold');
