@@ -13,9 +13,6 @@ class PropertyController extends Controller
     public function index()
     {
         $properties = Property::all();
-
-        dd($properties);
-
         return view('property.index', [
             'properties' => $properties
         ]);
