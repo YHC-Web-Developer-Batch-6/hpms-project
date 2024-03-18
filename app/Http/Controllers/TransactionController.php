@@ -14,9 +14,8 @@ class TransactionController extends Controller
     {
         $transactions = Transaction::all();
         return view('transaction.index', [
-            'transactions' => $transactions
-           ]);
-    
+            'transactions' => $transactions,
+        ]);
     }
 
     /**
