@@ -13,9 +13,9 @@
     class="fixed top-0 left-0 z-40 w-64 h-screen transition-transform -translate-x-full sm:translate-x-0"
     aria-label="Sidebar">
     <div class="h-full px-3 py-4 overflow-y-auto  bg-[#0F4E57] dark:bg-[#0F4E57] rounded-r-2xl">
-        <div class="flex justify-center my-2">
-            <ul class="space-y-2 font-medium">
-                <li>
+        <div class="flex justify-center my-2 w-full">
+            <ul class="space-y-2 font-medium w-full">
+                <li class="ms-7">
                     <a href="#" class="flex items-center pb-4 text-gray-900 rounded-lg group">
                         <svg width="150" height="70" viewBox="0 0 180 73" fill="none"
                             xmlns="http://www.w3.org/2000/svg">
@@ -28,9 +28,9 @@
                         </svg>
                     </a>
                 </li>
-                <li>
-                    <a href="{{ url('dashboard') }}"
-                        class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-[#D9D9D9] hover:bg-opacity-50 group">
+                <li class="w-full ">
+                    <a href="{{ route('dashboard') }}"
+                        class="{{ request()->is('dashboard') || request()->is('dashboard/*') ? 'bg-[#D9D9D9] bg-opacity-50' : '' }} flex items-center p-3 text-white rounded-lg dark:text-white hover:bg-[#D9D9D9]  hover:bg-opacity-50 group">
                         <svg width="32" height="32" viewBox="0 0 32 32" fill="none"
                             xmlns="http://www.w3.org/2000/svg">
                             <path
@@ -43,7 +43,7 @@
 
                 <li>
                     <a href="{{ url('property') }}"
-                        class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-[#D9D9D9] hover:bg-opacity-50  group">
+                        class="{{ request()->is('property') || request()->is('property/*') ? 'bg-[#D9D9D9] bg-opacity-50' : '' }} flex items-center p-3 text-white rounded-lg dark:text-white hover:bg-[#D9D9D9] hover:bg-opacity-50  group">
                         <svg width="32" height="31" viewBox="0 0 32 31" fill="none"
                             xmlns="http://www.w3.org/2000/svg">
                             <path
@@ -58,7 +58,7 @@
                 </li>
                 <li>
                     <a href="#"
-                        class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-[#D9D9D9] hover:bg-opacity-50  group">
+                        class="{{ request()->is('dashboard') || request()->is('dashboard/*') ? 'bg-[#D9D9D9] bg-opacity-50' : '' }} flex items-center p-3 text-white rounded-lg dark:text-white hover:bg-[#D9D9D9] hover:bg-opacity-50  group">
                         <svg width="33" height="33" viewBox="0 0 33 33" fill="none"
                             xmlns="http://www.w3.org/2000/svg">
                             <mask id="mask0_10_2006" style="mask-type:luminance" maskUnits="userSpaceOnUse" x="0" y="0"
@@ -77,7 +77,7 @@
                 </li>
                 <li>
                     <a href="{{ url('transaction') }}"
-                        class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-[#D9D9D9] hover:bg-opacity-50  group">
+                        class="{{ request()->is('transaction') || request()->is('transaction/*') ? 'bg-[#D9D9D9] bg-opacity-50' : '' }} flex items-center p-3 text-white rounded-lg dark:text-white hover:bg-[#D9D9D9] hover:bg-opacity-50  group ">
                         <svg width="32" height="31" viewBox="0 0 32 31" fill="none"
                             xmlns="http://www.w3.org/2000/svg">
                             <path fill-rule="evenodd" clip-rule="evenodd"
