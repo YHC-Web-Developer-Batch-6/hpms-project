@@ -10,11 +10,11 @@
             <p class="text-3xl font-bold">My Property</p>
             <p class="">Check Your Product Again!</p>
         </div>
-        <div class="flex items-center justify-center mb-4">
-            <div class="relative overflow-x-auto shadow-md sm:rounded-lg">
-                <table class="h-full text-sm text-left rtl:text-right text-gray-800 dark:text-gray-800">
+        <div class="flex items-center ms-7">
+            <div class="relative overflow-x-auto shadow-md sm:rounded-lg max-w-full">
+                <table class="text-sm text-left rtl:text-right text-gray-800 dark:text-gray-800">
                     <caption
-                        class=" p-5 text-lg items-center font-semibold text-left rtl:text-right bg-white dark:text-white dark:bg-gray-300">
+                        class="p-5 text-lg items-center font-semibold text-left rtl:text-right bg-white dark:text-white dark:bg-gray-300">
                         <div class="flex items-center justify-between">
                             <div class="flex justify-start items-center">
                                 <p
