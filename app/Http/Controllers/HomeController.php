@@ -6,14 +6,13 @@ use Illuminate\Http\Request;
 
 class HomeController extends Controller
 {
+    public function index()
+    {
+        return view('customer.index');
+    }
+
     public function dashboard()
     {
-        $active = 'dahsboard';
-
-        if (auth()->user()->hasRole('admin')) {
-            return view('dashboard', compact('active'));
-        }
-
-        return view('customer.index');
+        return view('dashboard');
     }
 }
