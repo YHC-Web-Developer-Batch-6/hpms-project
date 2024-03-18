@@ -27,8 +27,7 @@
                     </div>
                 </div>
                 <div class="flex justify-start items-center">
-                    <p
-                        class="text-sm font-normal text-gray-900 mb-4 md:mb-0 block w-full md:inline md:w-auto">
+                    <p class="text-sm font-normal text-gray-900 mb-4 md:mb-0 block w-full md:inline md:w-auto">
                         Menampilkan
                     </p>
                     <form class="ml-3 form-horizontal items-center">
@@ -64,8 +63,7 @@
                     </thead>
                     <tbody>
                         @foreach ($transactions as $index => $transaction)
-                            <tr
-                                class="text-nowrap bg-white">
+                            <tr class="text-nowrap bg-white">
                                 <td class="px-6 py-4">
                                     {{ $transaction->created_at->format('j M Y, g:i a') }}
                                 </td>
@@ -79,14 +77,14 @@
                                     {{ $transaction->user->name }}
                                 </td>
                                 <td class="px-6 py-4">
-                                    {{ "Rp" . number_format($transaction->total, 0, '.', '.') }}
+                                    {{ 'Rp' . number_format($transaction->total, 0, '.', '.') }}
                                 </td>
-    
+
                                 <td class="px-6 py-4">
-                                    {{ "Rp" . number_format($transaction->total, 0, '.', '.') }}
+                                    {{ 'Rp' . number_format($transaction->total, 0, '.', '.') }}
                                 </td>
                                 <td class="px-6 py-4">
-                                    {{ "Rp" . number_format($transaction->total, 0, '.', '.') }}
+                                    {{ 'Rp' . number_format($transaction->total, 0, '.', '.') }}
                                 </td>
                                 <td class="px-6 py-4">
                                     {{ $transaction->type }}
@@ -99,7 +97,8 @@
                                     @endif
                                 </td>
                                 <td class="flex text-center px-6 py-4">
-                                    <a href="#" class="underline hover:no-underline">Detail</a>
+                                    <a href="#"
+                                        class="bg-white hover:bg-gray-100 text-gray-800 font-semibold py-2 px-4 border border-gray-400 rounded shadow">Detail</a>
                                 </td>
                             </tr>
                         @endforeach

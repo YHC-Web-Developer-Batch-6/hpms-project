@@ -28,6 +28,7 @@
                         </svg>
                     </a>
                 </li>
+                <hr class="h-px my-8 bg-gray-200 border-0 dark:bg-gray-100">
                 <li class="w-full ">
                     <a href="{{ route('dashboard') }}"
                         class="{{ request()->is('dashboard') || request()->is('dashboard/*') ? 'bg-[#D9D9D9] bg-opacity-50' : '' }} flex items-center p-3 text-white rounded-lg dark:text-white hover:bg-[#D9D9D9]  hover:bg-opacity-50 group">
