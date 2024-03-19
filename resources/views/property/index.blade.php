@@ -114,7 +114,7 @@
                                     {{ ++$index }}
                                 </th>
                                 <td class="p-4">
-                                    <img src="https://www.google.com/url?sa=i&url=https%3A%2F%2Fbiz.kompas.com%2Fread%2F2023%2F08%2F21%2F115255128%2Finspirasi-rumah-minimalis-modern-sarat-kesederhanaan-fungsional-dan-estetika&psig=AOvVaw0kCJE4EAOVXwCoWu3jrErk&ust=1710762491283000&source=images&cd=vfe&opi=89978449&ved=0CBMQjRxqFwoTCKCgzquc-4QDFQAAAAAdAAAAABAD"
+                                    <img src="{{ $property->getFirstMediaUrl('property') }}"
                                         class="w-16 md:w-32 max-w-full max-h-full" alt="">
                                 </td>
                                 <td class="px-6 py-4">

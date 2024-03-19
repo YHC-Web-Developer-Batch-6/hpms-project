@@ -4,7 +4,7 @@ namespace Database\Seeders;
 
 use App\Models\Property;
 use App\Models\User;
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+use Illuminate\Support\Str;
 use Illuminate\Database\Seeder;
 
 class PropertySeeder extends Seeder
@@ -14,10 +14,8 @@ class PropertySeeder extends Seeder
      */
     public function run(): void
     {
-        // $user_id = User::all()->random(1)->first()->pluck('id');
-
         for ($i = 0; $i < 10; $i++) {
-            Property::create([
+            $property = Property::create([
                 'name' => fake()->company(),
                 'price' => fake()->numberBetween(10000000, 100000000),
                 'address' => fake()->address(),
@@ -26,6 +24,13 @@ class PropertySeeder extends Seeder
                 'is_sold' => 0,
                 'user_id' => fake()->randomElement(User::pluck('id')),
             ]);
+
+            $amount = fake()->numberBetween(2, 3);
+            for ($j = 0; $j < $amount; $j++) {
+                $imageUrl = 'https://picsum.photos/800/600';
+                $newFileName = Str::random(8) . '.png';
+                $property->addMediaFromUrl($imageUrl)->usingFileName($newFileName)->toMediaCollection('property');
+            }
         }
     }
 }
