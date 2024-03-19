@@ -2,9 +2,7 @@
 
 namespace App\Services\MediaLibrary;
 
-use App\Models\Product;
-use App\Models\Store;
-use App\Models\User;
+use App\Models\Property;
 use Spatie\MediaLibrary\MediaCollections\Models\Media;
 use Spatie\MediaLibrary\Support\PathGenerator\PathGenerator;
 
@@ -43,6 +41,11 @@ class CustomPathGenerator implements PathGenerator
 
         if ($prefix !== '') {
             return $prefix . '/' . $media->getAttribute('uuid');
+        }
+
+        switch ($media->model_type) {
+            case Property::class:
+                return '/' . $media->getAttribute('uuid');
         }
 
         return '/' . $media->getAttribute('uuid');

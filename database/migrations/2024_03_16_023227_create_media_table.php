@@ -2,12 +2,16 @@
 
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Schema;
 
 return new class extends Migration
 {
     public function up(): void
     {
+        $path = storage_path('app/public/media');
+        File::deleteDirectory($path);
+
         Schema::create('media', function (Blueprint $table) {
             $table->id();
 
