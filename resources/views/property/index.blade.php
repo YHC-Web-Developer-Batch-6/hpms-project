@@ -119,18 +119,19 @@
                                 </td>
                                 <td class="px-6 py-4">
                                     <div class="block">
-                                        <p>{{ $property->name }}</p>
-                                        <p>{{ $property->price }}</p>
+                                        <p class="font-bold">{{ $property->title }}</p>
+                                        <p>{{ Str::limit($property->location, 50) }}</p>
+                                        <p>{{ 'Rp' . number_format($property->price, 0, '.', '.') }}</p>
                                     </div>
                                 </td>
-                                <td class="px-6 py-4">
-                                    {{ $property->created_at->format('j M Y, g:i a') }}
+                                <td class="px-6 py-4 font-bold">
+                                    {{ $property->created_at->format('j F Y') }}
                                 </td>
                                 <td class="px-6 py-4">
-                                    @if ($property->is_sold === 'Sold')
-                                        <p class="text-red-800 font-semibold">Sold</p>
+                                    @if ($property->is_sold === 1)
+                                        <p class="text-red-800 font-bold">Terjual</p>
                                     @else
-                                        <p class="text-green-700 font-semibold">Available</p>
+                                        <p class="text-green-700 font-bold">Tersedia</p>
                                     @endif
                                 </td>
                                 <td class="flex span-2 px-6 py-4">

@@ -14,12 +14,16 @@ return new class extends Migration
         Schema::create('properties', function (Blueprint $table) {
             $table->id();
             $table->foreignId('user_id')->constrained('users')->cascadeOnDelete();
-            $table->string('name');
+            $table->string('title');
+            $table->string('type');
+            $table->string('certification');
             $table->string('price');
-            $table->string('address');
-            $table->string('size');
-            $table->text('facility');
+            $table->string('property_size');
+            $table->string('surface_size');
+            $table->string('location');
+            $table->text('description');
             $table->boolean('is_sold');
+            $table->boolean('is_archive');
             $table->timestamps();
         });
     }

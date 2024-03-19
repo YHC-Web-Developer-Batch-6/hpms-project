@@ -16,13 +16,17 @@ class PropertySeeder extends Seeder
     {
         for ($i = 0; $i < 10; $i++) {
             $property = Property::create([
-                'name' => fake()->company(),
-                'price' => fake()->numberBetween(10000000, 100000000),
-                'address' => fake()->address(),
-                'size' => fake()->numberBetween(1, 100),
-                'facility' => fake()->paragraph(),
-                'is_sold' => 0,
                 'user_id' => fake()->randomElement(User::pluck('id')),
+                'title' => ucfirst(fake()->words(fake()->numberBetween(2, 4), true)),
+                'type' => fake()->randomElement(['Rumah', 'Tanah', 'Gedung', 'Ruko']),
+                'certification' => fake()->sentence(),
+                'price' => fake()->numberBetween(10000000, 100000000),
+                'property_size' => fake()->numberBetween(50, 1000),
+                'surface_size' => fake()->numberBetween(50, 500),
+                'location' => fake()->address(),
+                'description' => fake()->paragraph(),
+                'is_sold' => 0,
+                'is_archive' => 0,
             ]);
 
             $amount = fake()->numberBetween(2, 3);

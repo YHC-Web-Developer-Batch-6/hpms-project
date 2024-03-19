@@ -45,7 +45,7 @@ class CustomPathGenerator implements PathGenerator
 
         switch ($media->model_type) {
             case Property::class:
-                return '/' . $media->getAttribute('uuid');
+                return '/' . $media->getAttribute('uuid') . '/property';
         }
 
         return '/' . $media->getAttribute('uuid');
