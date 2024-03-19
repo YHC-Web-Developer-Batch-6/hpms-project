@@ -117,15 +117,16 @@
                                                         class="bg-gray-50 px-4 py-3 sm:px-6 sm:flex border-b border-[#28808C]">
                                                         <p class="text-2xl font-bold px-4 py-2">Detail</p>
                                                     </div>
-                                                    <div class="bg-gray-100 px-4 pt-5 pb-4 sm:p-6 sm:pb-4">
+                                                    <div class="bg-gray-100  pt-5 pb-4 sm:px-4 sm:pb-4">
                                                         <!-- Konten Pop-up -->
                                                         <div class="sm:flex sm:items-start">
-                                                            <div class="text-center sm:mt-0 sm:ml-4 sm:text-left">
-                                                                <div class="max-w-xs w-full sm:mx-0 sm:w-auto mb-4">
+                                                            <div class="text-center sm:mt-0  sm:text-left w-full ">
+                                                                <div class="w-full sm:mx-0 sm:w-auto mb-4">
                                                                     <div
                                                                         class="bg-white overflow-hidden shadow-lg rounded-lg">
-                                                                        <div class="flex p-4 items-center">
-                                                                            <div class="justify-start">
+                                                                        <div
+                                                                            class="flex p-4 items-center justify-around">
+                                                                            <div class="">
                                                                                 <div
                                                                                     class="rounded-full bg-black w-16 h-16 items-center">
                                                                                 </div>
@@ -182,9 +183,10 @@
                                                                         </div>
                                                                     </div>
                                                                 </div>
-                                                                <div class="relative overflow-x-auto">
+                                                                <div
+                                                                    class="relative overflow-x-auto rounded-lg bg-red-500">
                                                                     <table
-                                                                        class="h-full text-sm text-left rtl:text-right text-gray-800 dark:text-gray-800">
+                                                                        class="h-full text-sm text-left rtl:text-right text-gray-800 dark:text-gray-800 w-full">
                                                                         <thead class="">
                                                                             <tr
                                                                                 class="bg-[#28808C] text-white text-nowrap">
