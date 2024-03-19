@@ -22,7 +22,7 @@ Route::get('/', function () {
 });
 
 Route::middleware(['auth', 'verified', 'role:user'])->group(function () {
-    Route::get('/', [HomeController::class, 'index'])->name('home');
+    Route::get('/home', [HomeController::class, 'index'])->name('home');
 });
 
 Route::middleware(['auth', 'verified', 'role:admin'])->group(function () {
