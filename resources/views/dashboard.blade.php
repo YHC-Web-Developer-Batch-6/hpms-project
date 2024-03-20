@@ -6,7 +6,7 @@
     </x-slot>
     <div class="p-4 sm:ml-64">
         <div class="pl-6 pb-4 pt-2">
-            <p class="text-3xl font-bold">Welcome, {{ Auth::user()->name }}</p>
+            <p class="text-3xl font-bold text-black">Welcome, {{ Auth::user()->name }}</p>
         </div>
         <div class="m-6">
             <div class="flex flex-wrap -mx-6">

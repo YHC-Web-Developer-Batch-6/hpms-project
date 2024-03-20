@@ -5,7 +5,7 @@
         </h2>
     </x-slot>
     <div class="p-4 sm:ml-64">
-        <div class="pl-1 pb-8">
+        <div class="pb-8">
             <p class="text-3xl font-bold">Transactions</p>
             <p class="">Periksa Kembali Transaksi Anda!</p>
         </div>
@@ -100,8 +100,8 @@
                                     <div x-data="{ isOpen: false }">
                                         <a href="#" @click="isOpen = true"
                                             class="bg-white hover:bg-gray-100 text-gray-800 font-semibold py-2 px-4 border border-gray-400 rounded shadow">Detail</a>
-                                        <div x-show="isOpen" @click.away="isOpen = false" :class="[isOpen && '!block']" x-trap.noscroll="isOpen"
-                                            class="hidden fixed z-10 inset-0 overflow-y-auto">
+                                        <div x-show="isOpen" @click.away="isOpen = false"
+                                            class="fixed z-10 inset-0 overflow-y-auto">
                                             <div
                                                 class="flex items-center justify-center min-h-screen pt-4 px-4 pb-20 text-center sm:block sm:p-0">
                                                 <div class="fixed inset-0 transition-opacity" aria-hidden="true">
@@ -117,22 +117,22 @@
                                                         class="bg-gray-50 px-4 py-3 sm:px-6 sm:flex border-b border-[#28808C]">
                                                         <p class="text-2xl font-bold px-4 py-2">Detail</p>
                                                     </div>
-                                                    <div class="bg-gray-100  pt-5 pb-4 sm:px-4 sm:pb-4">
+                                                    <div class="bg-gray-100 px-4 pt-5 pb-4 sm:p-6 sm:pb-4">
                                                         <!-- Konten Pop-up -->
                                                         <div class="sm:flex sm:items-start">
-                                                            <div class="text-center sm:mt-0  sm:text-left w-full ">
+                                                            <div class="text-center sm:mt-0 sm:text-left w-full">
                                                                 <div class="w-full sm:mx-0 sm:w-auto mb-4">
                                                                     <div
                                                                         class="bg-white overflow-hidden shadow-lg rounded-lg">
-                                                                        <div
-                                                                            class="flex p-4 items-center justify-around">
-                                                                            <div class="">
+                                                                        <div class="flex py-4 px-10 items-center">
+                                                                            <div class="justify-start">
                                                                                 <div
-                                                                                    class="rounded-full bg-black w-16 h-16 items-center">
+                                                                                    class="rounded-full bg-black w-12 h-12 items-center">
                                                                                 </div>
                                                                             </div>
-                                                                            <div class="text-left justify-end ml-8">
-                                                                                <div class="flex items-center mb-2">
+                                                                            <div
+                                                                                class="text-left justify-end ml-10 flex">
+                                                                                <div class="flex items-center mr-6">
                                                                                     <svg width="20" height="20"
                                                                                         viewBox="0 0 20 20"
                                                                                         fill="none"
@@ -143,11 +143,11 @@
                                                                                             fill="#231F20" />
                                                                                     </svg>
 
-                                                                                    <p class="text-sm font-normal ml-4">
+                                                                                    <p class="text-sm font-normal ml-2">
                                                                                         Nama
                                                                                         Pengguna</p>
                                                                                 </div>
-                                                                                <div class="flex items-center mb-2">
+                                                                                <div class="flex items-center mr-6">
                                                                                     <svg width="20" height="20"
                                                                                         viewBox="0 0 20 20"
                                                                                         fill="none"
@@ -160,7 +160,7 @@
 
 
                                                                                     <p
-                                                                                        class="text-sm font-normal ml-4">
+                                                                                        class="text-sm font-normal ml-2">
                                                                                         Email Pengguna</p>
                                                                                 </div>
                                                                                 <div class="flex items-center">
@@ -176,15 +176,14 @@
 
 
                                                                                     <p
-                                                                                        class="text-sm font-normal ml-4">
+                                                                                        class="text-sm font-normal ml-2">
                                                                                         No.Telp Pengguna</p>
                                                                                 </div>
                                                                             </div>
                                                                         </div>
                                                                     </div>
                                                                 </div>
-                                                                <div
-                                                                    class="relative overflow-x-auto rounded-lg bg-red-500">
+                                                                <div class="relative overflow-x-auto rounded-lg">
                                                                     <table
                                                                         class="h-full text-sm text-left rtl:text-right text-gray-800 dark:text-gray-800 w-full">
                                                                         <thead class="">
