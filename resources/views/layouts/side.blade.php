@@ -89,6 +89,7 @@
 
                             <span class="flex-1 ms-3 whitespace-nowrap">Transaction</span>
                         </a>
+                    </li>
                 </ul>
             </div>
         </div>
