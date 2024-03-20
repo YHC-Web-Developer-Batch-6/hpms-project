@@ -31,7 +31,7 @@ class PropertyController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        return view('property.add');
     }
 
     /**

@@ -1,71 +1,161 @@
 <x-app-layout>
-    <form class="w-full max-w-lg">
-        <div class="flex flex-wrap -mx-3 mb-6">
-            <div class="w-full md:w-1/2 px-3 mb-6 md:mb-0">
-                <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-first-name">
-                    First Name
-                </label>
-                <input
-                    class="appearance-none block w-full bg-gray-200 text-gray-700 border border-red-500 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
-                    id="grid-first-name" type="text" placeholder="Jane">
-                <p class="text-red-500 text-xs italic">Please fill out this field.</p>
-            </div>
-            <div class="w-full md:w-1/2 px-3">
-                <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-last-name">
-                    Last Name
-                </label>
-                <input
-                    class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
-                    id="grid-last-name" type="text" placeholder="Doe">
-            </div>
+
+    <div class="p-4 sm:ml-64">
+        <div class="pb-4">
+            <p class="text-3xl font-bold text-black">Form Property</p>
         </div>
-        <div class="flex flex-wrap -mx-3 mb-6">
-            <div class="w-full px-3">
-                <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-password">
-                    Password
-                </label>
-                <input
-                    class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
-                    id="grid-password" type="password" placeholder="******************">
-                <p class="text-gray-600 text-xs italic">Make it as long and as crazy as you'd like</p>
-            </div>
-        </div>
-        <div class="flex flex-wrap -mx-3 mb-2">
-            <div class="w-full md:w-1/3 px-3 mb-6 md:mb-0">
-                <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-city">
-                    City
-                </label>
-                <input
-                    class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
-                    id="grid-city" type="text" placeholder="Albuquerque">
-            </div>
-            <div class="w-full md:w-1/3 px-3 mb-6 md:mb-0">
-                <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-state">
-                    State
-                </label>
-                <div class="relative">
-                    <select
-                        class="block appearance-none w-full bg-gray-200 border border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
-                        id="grid-state">
-                        <option>New Mexico</option>
-                        <option>Missouri</option>
-                        <option>Texas</option>
-                    </select>
-                    <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
-                        <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
-                            <path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z" />
-                        </svg>
+        <div class="card bg-white p-4">
+            <h1 class="font-medium text-2xl mb-3">Umum</h1>
+            <form action="">
+                <div class="grid md:grid-cols-2 gap-2 max-w-full mb-3">
+                    {{-- left --}}
+                    <div class="max-w-full">
+                        <div class="max-w-full mb-2">
+                            <label for="judul" class="block text-sm font-medium leading-6 text-gray-900">Judul</label>
+                            <div class="mt-2">
+                                <div
+                                    class="flex rounded-md shadow-sm ring-1 ring-inset ring-gray-300 focus-within:ring-2 focus-within:ring-inset focus-within:ring-indigo-600 sm:max-w-full">
+
+                                    <input type="text" name="judul" id="judul" autocomplete="judul"
+                                        class="block flex-1 border-0 bg-transparent py-1.5 pl-1 text-gray-900 placeholder:text-gray-400 focus:ring-0 sm:text-sm sm:leading-6">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="max-w-full mb-2">
+                            <label for="tipe" class="block text-sm font-medium leading-6 text-gray-900">Tipe</label>
+                            <div class="mt-2">
+                                <div
+                                    class="flex rounded-md shadow-sm ring-1 ring-inset ring-gray-300 focus-within:ring-2 focus-within:ring-inset focus-within:ring-indigo-600 sm:max-w-full">
+                                    <select id="tipe"
+                                        class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                                        <option selected>Pilih Tipe</option>
+                                        <option value="US">Rumah</option>
+                                        <option value="CA">Tanah</option>
+                                        <option value="FR">Ruko</option>
+                                        <option value="DE">Gedung</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="max-w-full mb-2">
+                            <label for="luas_property" class="block text-sm font-medium leading-6 text-gray-900">Luas
+                                Property</label>
+                            <div class="mt-2">
+                                <div
+                                    class="flex rounded-md shadow-sm ring-1 ring-inset ring-gray-300 focus-within:ring-2 focus-within:ring-inset focus-within:ring-indigo-600 sm:max-w-full">
+
+                                    <input type="text" name="luas_property" id="luas_property"
+                                        autocomplete="luas_property"
+                                        class="block flex-1 border-0 bg-transparent py-1.5 pl-1 text-gray-900 placeholder:text-gray-400 focus:ring-0 sm:text-sm sm:leading-6">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="max-w-full">
+                            <label for="username" class="block text-sm font-medium leading-6 text-gray-900">Luas
+                                Tanah</label>
+                            <div class="mt-2">
+                                <div
+                                    class="flex rounded-md shadow-sm ring-1 ring-inset ring-gray-300 focus-within:ring-2 focus-within:ring-inset focus-within:ring-indigo-600 sm:max-w-full">
+
+                                    <input type="text" name="username" id="username" autocomplete="username"
+                                        class="block flex-1 border-0 bg-transparent py-1.5 pl-1 text-gray-900 placeholder:text-gray-400 focus:ring-0 sm:text-sm sm:leading-6">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    {{-- right --}}
+                    <div class="max-w-full ">
+                        <div class="max-w-full mb-2">
+                            <label for="sertifikasi"
+                                class="block text-sm font-medium leading-6 text-gray-900">Sertifikasi</label>
+                            <div class="mt-2">
+                                <div
+                                    class="flex rounded-md shadow-sm ring-1 ring-inset ring-gray-300 focus-within:ring-2 focus-within:ring-inset focus-within:ring-indigo-600 sm:max-w-full">
+
+                                    <input type="text" name="sertifikasi" id="sertifikasi" autocomplete="sertifikasi"
+                                        class="block flex-1 border-0 bg-transparent py-1.5 pl-1 text-gray-900 placeholder:text-gray-400 focus:ring-0 sm:text-sm sm:leading-6">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="max-w-full mb-2">
+                            <label for="dokumentasi"
+                                class="block text-sm font-medium leading-6 text-gray-900">Dokumentasi</label>
+                            <div class="mt-2">
+                                <div
+                                    class="flex rounded-md shadow-sm ring-1 ring-inset ring-gray-300 focus-within:ring-2 focus-within:ring-inset focus-within:ring-indigo-600 sm:max-w-full">
+                                    <input
+                                        class="block w-full text-sm text-gray-900 border border-gray-300 rounded-lg cursor-pointer bg-gray-50 dark:text-gray-400 focus:outline-none dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400"
+                                        aria-describedby="user_avatar_help" id="dokumentasi" type="file">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="max-w-full">
+                            <label for="lokasi"
+                                class="block text-sm font-medium leading-6 text-gray-900">Lokasi</label>
+                            <div class="mt-2">
+                                <div
+                                    class="flex rounded-md shadow-sm ring-1 ring-inset ring-gray-300 focus-within:ring-2 focus-within:ring-inset focus-within:ring-indigo-600 sm:max-w-full">
+
+                                    <input type="text" name="lokasi" id="lokasi" autocomplete="lokasi"
+                                        class="block flex-1 border-0 bg-transparent py-1.5 pl-1 text-gray-900 placeholder:text-gray-400 focus:ring-0 sm:text-sm sm:leading-6">
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="w-full md:w-1/3 px-3 mb-6 md:mb-0">
-                <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-zip">
-                    Zip
-                </label>
-                <input
-                    class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
-                    id="grid-zip" type="text" placeholder="90210">
-            </div>
+                <div class="max-w-full">
+                    <label for="about" class="block text-sm font-medium leading-6 text-gray-900">Descriptions</label>
+                    <div class="mt-2">
+                        <textarea id="about" name="about" rows="4"
+                            class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"></textarea>
+                    </div>
+                </div>
+                <h1 class="font-medium text-2xl mt-3 mb-3">Detail Harga</h1>
+                <div class="grid md:grid-cols-2 gap-2">
+                    <div class="max-w-full">
+                        <div class="max-w-full mb-2">
+                            <label for="harga"
+                                class="block text-sm font-medium leading-6 text-gray-900">Harga</label>
+                            <div class="mt-2">
+                                <div
+                                    class="flex rounded-md shadow-sm ring-1 ring-inset ring-gray-300 focus-within:ring-2 focus-within:ring-inset focus-within:ring-indigo-600 sm:max-w-full">
+
+                                    <input type="text" name="harga" id="harga" autocomplete="harga"
+                                        class="block flex-1 border-0 bg-transparent py-1.5 pl-1 text-gray-900 placeholder:text-gray-400 focus:ring-0 sm:text-sm sm:leading-6">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="max-w-full mb-2">
+                            <label for="uang_muka" class="block text-sm font-medium leading-6 text-gray-900">Uang
+                                Muka</label>
+                            <div class="mt-2">
+                                <div
+                                    class="flex rounded-md shadow-sm ring-1 ring-inset ring-gray-300 focus-within:ring-2 focus-within:ring-inset focus-within:ring-indigo-600 sm:max-w-full">
+
+                                    <input type="text" name="uang_muka" id="uang_muka" autocomplete="uang_muka"
+                                        class="block flex-1 border-0 bg-transparent py-1.5 pl-1 text-gray-900 placeholder:text-gray-400 focus:ring-0 sm:text-sm sm:leading-6">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="max-w-full">
+                        <div class="max-w-full mb-2">
+                            <label for="judul" class="block text-sm font-medium leading-6 text-gray-900">Metode
+                                Pembayaran</label>
+                            <div class="mt-2">
+                                <div
+                                    class="flex rounded-md shadow-sm ring-1 ring-inset ring-gray-300 focus-within:ring-2 focus-within:ring-inset focus-within:ring-indigo-600 sm:max-w-full">
+
+                                    <input type="text" name="judul" id="judul" autocomplete="judul"
+                                        class="block flex-1 border-0 bg-transparent py-1.5 pl-1 text-gray-900 placeholder:text-gray-400 focus:ring-0 sm:text-sm sm:leading-6">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </form>
+
         </div>
-    </form>
+
+    </div>
 </x-app-layout>

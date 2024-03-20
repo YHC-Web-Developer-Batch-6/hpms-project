@@ -11,7 +11,7 @@
             <p class="text-black">Check Your Product Again!</p>
         </div>
         <div class="flex flex-col gap-3">
-            <div class="flex">
+            {{-- <div class="flex">
                 <div class="flex justify-end">
                     <button type="button"
                         class="text-gray-100 bg-[#28808C] hover:bg-[#3D889B]  border border-gray-200 focus:ring-4 focus:outline-none focus:ring-gray-100 font-medium rounded-lg text-sm px-5 py-2 text-center inline-flex items-center dark:focus:ring-gray-600 dark:bg-gray-800 dark:border-gray-700 dark:text-white dark:hover:bg-gray-700 me-6">
@@ -30,7 +30,8 @@
                     <a href="#"
                         class="bg-white hover:bg-gray-100 text-gray-800 font-semibold py-2 px-4 border border-[#28808C] rounded shadow">Tersedia</a>
                 </div>
-            </div>
+            </div> --}}
+
             <div class="relative overflow-x-auto shadow-md sm:rounded-lg max-w-full">
                 {{-- <table id="example">
                     <thead class="text-xs text-gray-800 uppercase bg-gray-50 dark:bg-gray-400 dark:text-gray-800">
@@ -160,97 +161,147 @@
 
                 {{-- data table --}}
                 <div class="card bg-white w-full">
-                    <div class="card-body">
+                    <div class="mb-4  dark:border-gray-700">
+                        <ul class="flex flex-wrap -mb-px text-sm font-medium text-center" id="default-styled-tab"
+                            data-tabs-toggle="#default-styled-tab-content"
+                            data-tabs-active-classes="text-[#0F4E57] hover:text-purple-600 dark:text-purple-500 dark:hover:text-purple-500 border-[#0F4E57] dark:border-purple-500"
+                            data-tabs-inactive-classes="dark:border-transparent text-gray-500 hover:text-gray-600 dark:text-gray-400 border-gray-100 hover:border-gray-300 dark:border-gray-700 dark:hover:text-gray-300"
+                            role="tablist">
+                            <li class="me-2" role="presentation">
+                                <button class="inline-block p-4 border-b-2 rounded-t-lg" id="profile-styled-tab"
+                                    data-tabs-target="#styled-profile" type="button" role="tab"
+                                    aria-controls="profile" aria-selected="false">Di Tampilkan</button>
+                            </li>
+                            <li class="me-2" role="presentation">
+                                <button
+                                    class="inline-block p-4 border-b-2 rounded-t-lg hover:text-gray-600 hover:border-gray-300 dark:hover:text-gray-300"
+                                    id="dashboard-styled-tab" data-tabs-target="#styled-dashboard" type="button"
+                                    role="tab" aria-controls="dashboard" aria-selected="false">Di
+                                    Arsipkan</button>
+                            </li>
 
-                        <table id="example" class="" style="width:100%">
-                            <thead>
-                                <tr>
-                                    <th>No.</th>
-                                    <th><span class="sr-only">Image</span></th>
-                                    <th>Property</th>
-                                    <th>Date</th>
-                                    <th>Status</th>
-                                    <th>Action</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                @foreach ($properties as $index => $property)
-                                    @if ($property->is_archive === 0)
-                                        <tr
-                                            class="odd:bg-white odd:dark:bg-gray-300 even:bg-gray-50 even:dark:bg-gray-200 border-b dark:border-gray-600">
-                                            <th scope="row"
-                                                class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-black">
-                                                {{ ++$index }}
-                                            </th>
-                                            <td class="p-4">
-                                                <img src="{{ $property->getFirstMediaUrl('property') }}"
-                                                    class="w-16 md:w-32 max-w-full max-h-full" alt="">
-                                            </td>
-                                            <td class="px-6 py-4">
-                                                <div class="block">
-                                                    <p class="font-bold">{{ $property->title }}</p>
-                                                    <p>{{ Str::limit($property->location, 50) }}</p>
-                                                    <p>{{ 'Rp' . number_format($property->price, 0, '.', '.') }}
-                                                    </p>
-                                                </div>
-                                            </td>
-                                            <td class="px-6 py-4 font-bold">
-                                                {{ $property->created_at->format('j F Y') }}
-                                            </td>
-                                            <td class="px-6 py-4">
-                                                @if ($property->is_sold === 1)
-                                                    <p class="text-[#D1293D] font-bold">Terjual</p>
-                                                @else
-                                                    <p class="text-[#12C95F] font-bold">Tersedia</p>
-                                                @endif
-                                            </td>
-                                            <td class="flex px-9 my-8 items-center">
-                                                <a href="">
-                                                    <svg width="26" height="26" viewBox="0 0 33 33"
-                                                        fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                        <path d="M28.875 11V28.875H4.125V11" stroke="black"
-                                                            stroke-width="2" stroke-linecap="round"
-                                                            stroke-linejoin="round" />
-                                                        <path d="M31.625 4.125H1.375V11H31.625V4.125Z" stroke="black"
-                                                            stroke-width="2" stroke-linecap="round"
-                                                            stroke-linejoin="round" />
-                                                        <path d="M13.75 16.5H19.25" stroke="black" stroke-width="2"
-                                                            stroke-linecap="round" stroke-linejoin="round" />
-                                                    </svg>
+                        </ul>
+                    </div>
+                    <div id="default-styled-tab-content">
 
-                                                </a>
-                                                <a href="">
-                                                    <svg width="30" height="30" viewBox="0 0 35 35"
-                                                        fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                        <mask id="mask0_15_2159" style="mask-type:luminance"
-                                                            maskUnits="userSpaceOnUse" x="0" y="0" width="30"
-                                                            height="30">
-                                                            <path d="M35 0H0V35H35V0Z" fill="white" />
-                                                        </mask>
-                                                        <g mask="url(#mask0_15_2159)">
-                                                            <path fill-rule="evenodd" clip-rule="evenodd"
-                                                                d="M25.5251 4.52513C26.8919 3.15829 29.1081 3.15829 30.4749 4.52513C31.8418 5.89195 31.8418 8.10803 30.4749 9.47487L17.1998 22.75H12.25V17.8002L25.5251 4.52513ZM7 7C5.067 7 3.5 8.567 3.5 10.5V28C3.5 29.9331 5.067 31.5 7 31.5H24.5C26.4331 31.5 28 29.9331 28 28V21C28 20.0335 27.2165 19.25 26.25 19.25C25.2835 19.25 24.5 20.0335 24.5 21V28H7V10.5H14C14.9665 10.5 15.75 9.71649 15.75 8.75C15.75 7.78351 14.9665 7 14 7H7Z"
-                                                                fill="#111827" />
-                                                        </g>
-                                                    </svg>
-                                                </a>
-                                            </td>
-                                        </tr>
-                                    @endif
-                                @endforeach
-                            </tbody>
+                        <div class="hidden px-4 rounded-lg bg-white dark:bg-gray-800" id="styled-profile"
+                            role="tabpanel" aria-labelledby="profile-tab">
+                            <div class="flex mb-3 justify-between">
+                                <div class="flex">
+                                    <button type="button"
+                                        onclick="window.location.href = '{{ route('property.add') }}'"
+                                        class="text-gray-100 bg-[#28808C] hover:bg-[#3D889B]  border border-gray-200 focus:ring-4 focus:outline-none focus:ring-gray-100 font-medium rounded-lg text-sm px-5 py-2 text-center inline-flex items-center dark:focus:ring-gray-600 dark:bg-gray-800 dark:border-gray-700 dark:text-white dark:hover:bg-gray-700 me-6">
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="pr-2" width=24 height=24
+                                            viewBox="0 0 448 512"><!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
+                                            <path
+                                                d="M256 80c0-17.7-14.3-32-32-32s-32 14.3-32 32V224H48c-17.7 0-32 14.3-32 32s14.3 32 32 32H192V432c0 17.7 14.3 32 32 32s32-14.3 32-32V288H400c17.7 0 32-14.3 32-32s-14.3-32-32-32H256V80z"
+                                                fill='white' />
+                                        </svg>
+                                        List New Property
+                                    </button>
+                                </div>
+                                <div class="flex justify-start">
+                                    <a href="#"
+                                        class="bg-white hover:bg-gray-100 text-gray-800 font-semibold py-2 px-4 border border-[#28808C] rounded shadow mr-2">Terjual</a>
+                                    <a href="#"
+                                        class="bg-white hover:bg-gray-100 text-gray-800 font-semibold py-2 px-4 border border-[#28808C] rounded shadow">Tersedia</a>
+                                </div>
+                            </div>
+                            <table id="example" class="" style="width:100%">
+                                <thead>
+                                    <tr>
+                                        <th>No.</th>
+                                        <th><span class="sr-only">Image</span></th>
+                                        <th>Property</th>
+                                        <th>Date</th>
+                                        <th>Status</th>
+                                        <th>Action</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @foreach ($properties as $index => $property)
+                                        @if ($property->is_archive === 0)
+                                            <tr
+                                                class="odd:bg-white odd:dark:bg-gray-300 even:bg-gray-50 even:dark:bg-gray-200 border-b dark:border-gray-600">
+                                                <th scope="row"
+                                                    class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-black">
+                                                    {{ ++$index }}
+                                                </th>
+                                                <td class="p-4">
+                                                    <img src="{{ $property->getFirstMediaUrl('property') }}"
+                                                        class="w-16 md:w-32 max-w-full max-h-full" alt="">
+                                                </td>
+                                                <td class="px-6 py-4">
+                                                    <div class="block">
+                                                        <p class="font-bold">{{ $property->title }}</p>
+                                                        <p>{{ Str::limit($property->location, 50) }}</p>
+                                                        <p>{{ 'Rp' . number_format($property->price, 0, '.', '.') }}
+                                                        </p>
+                                                    </div>
+                                                </td>
+                                                <td class="px-6 py-4 ">
+                                                    {{ $property->created_at->format('j F Y') }}
+                                                </td>
+                                                <td class="px-6 py-4">
+                                                    @if ($property->is_sold === 1)
+                                                        <p class="text-[#D1293D] font-bold">Terjual</p>
+                                                    @else
+                                                        <p class="text-[#12C95F] font-bold">Tersedia</p>
+                                                    @endif
+                                                </td>
+                                                <td class="flex px-9 my-8 justify-around">
+                                                    <a href="">
+                                                        <svg width="26" height="26" viewBox="0 0 33 33"
+                                                            fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                            <path d="M28.875 11V28.875H4.125V11" stroke="black"
+                                                                stroke-width="2" stroke-linecap="round"
+                                                                stroke-linejoin="round" />
+                                                            <path d="M31.625 4.125H1.375V11H31.625V4.125Z"
+                                                                stroke="black" stroke-width="2" stroke-linecap="round"
+                                                                stroke-linejoin="round" />
+                                                            <path d="M13.75 16.5H19.25" stroke="black" stroke-width="2"
+                                                                stroke-linecap="round" stroke-linejoin="round" />
+                                                        </svg>
 
-                            <tfoot>
-                                <tr>
-                                    <th>No.</th>
-                                    <th><span class="sr-only">Image</span></th>
-                                    <th>Property</th>
-                                    <th>Date</th>
-                                    <th>Status</th>
-                                    <th>Action</th>
-                                </tr>
-                            </tfoot>
-                        </table>
+                                                    </a>
+                                                    <a href="">
+                                                        <svg width="30" height="26" viewBox="0 0 35 35"
+                                                            fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                            <mask id="mask0_15_2159" style="mask-type:luminance"
+                                                                maskUnits="userSpaceOnUse" x="0" y="0" width="30"
+                                                                height="30">
+                                                                <path d="M35 0H0V35H35V0Z" fill="white" />
+                                                            </mask>
+                                                            <g mask="url(#mask0_15_2159)">
+                                                                <path fill-rule="evenodd" clip-rule="evenodd"
+                                                                    d="M25.5251 4.52513C26.8919 3.15829 29.1081 3.15829 30.4749 4.52513C31.8418 5.89195 31.8418 8.10803 30.4749 9.47487L17.1998 22.75H12.25V17.8002L25.5251 4.52513ZM7 7C5.067 7 3.5 8.567 3.5 10.5V28C3.5 29.9331 5.067 31.5 7 31.5H24.5C26.4331 31.5 28 29.9331 28 28V21C28 20.0335 27.2165 19.25 26.25 19.25C25.2835 19.25 24.5 20.0335 24.5 21V28H7V10.5H14C14.9665 10.5 15.75 9.71649 15.75 8.75C15.75 7.78351 14.9665 7 14 7H7Z"
+                                                                    fill="#111827" />
+                                                            </g>
+                                                        </svg>
+                                                    </a>
+                                                </td>
+                                            </tr>
+                                        @endif
+                                    @endforeach
+                                </tbody>
+
+                                <tfoot>
+                                    <tr>
+                                        <th>No.</th>
+                                        <th><span class="sr-only">Image</span></th>
+                                        <th>Property</th>
+                                        <th>Date</th>
+                                        <th>Status</th>
+                                        <th>Action</th>
+                                    </tr>
+                                </tfoot>
+                            </table>
+                        </div>
+                        <div class="hidden p-4 rounded-lg bg-white dark:bg-gray-800" id="styled-dashboard"
+                            role="tabpanel" aria-labelledby="dashboard-tab">
+                            <p class="text-sm text-gray-500 dark:text-gray-400">Belum Ada Yang di Arsipkan
+                            </p>
+                        </div>
                     </div>
                 </div>
             </div>

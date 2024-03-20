@@ -31,6 +31,7 @@ Route::middleware(['auth', 'verified', 'role:admin'])->group(function () {
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
     Route::get('/property', [PropertyController::class, 'index'])->name('property.index');
+    Route::get('/property/add', [PropertyController::class, 'store'])->name('property.add');
     Route::get('/transaction', [TransactionController::class, 'index'])->name('transaction.index');
 });
 
