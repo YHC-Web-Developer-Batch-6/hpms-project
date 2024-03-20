@@ -4,7 +4,7 @@
         <div class="pb-4">
             <p class="text-3xl font-bold text-black">Form Property</p>
         </div>
-        <div class="card bg-white p-4">
+        <div class="card bg-white p-4 shadow-lg">
             <h1 class="font-medium text-2xl mb-3">Umum</h1>
             <form action="">
                 <div class="grid md:grid-cols-2 gap-2 max-w-full mb-3">
@@ -111,7 +111,7 @@
                     </div>
                 </div>
                 <h1 class="font-medium text-2xl mt-3 mb-3">Detail Harga</h1>
-                <div class="grid md:grid-cols-2 gap-2">
+                <div class="grid md:grid-cols-2 gap-4">
                     <div class="max-w-full">
                         <div class="max-w-full mb-2">
                             <label for="harga"
@@ -140,17 +140,53 @@
                     </div>
                     <div class="max-w-full">
                         <div class="max-w-full mb-2">
-                            <label for="judul" class="block text-sm font-medium leading-6 text-gray-900">Metode
+                            <label class="block text-sm font-medium leading-6 text-gray-900">Metode
                                 Pembayaran</label>
                             <div class="mt-2">
-                                <div
-                                    class="flex rounded-md shadow-sm ring-1 ring-inset ring-gray-300 focus-within:ring-2 focus-within:ring-inset focus-within:ring-indigo-600 sm:max-w-full">
-
-                                    <input type="text" name="judul" id="judul" autocomplete="judul"
-                                        class="block flex-1 border-0 bg-transparent py-1.5 pl-1 text-gray-900 placeholder:text-gray-400 focus:ring-0 sm:text-sm sm:leading-6">
+                                <div class="flex items-center gap-x-3">
+                                    <input id="full-payment" name="push-notifications" type="radio"
+                                        class="h-4 w-4 border-gray-300 text-indigo-600 focus:ring-[#0F4E57] checked:bg-[#0F4E57]">
+                                    <label for="full-payment"
+                                        class="block text-sm font-medium leading-6 text-gray-900">Full Payment</label>
+                                </div>
+                                <div class="flex items-center gap-x-3">
+                                    <input id="cicilan-12-Bulan" name="push-notifications" type="radio"
+                                        class="h-4 w-4 border-gray-300 text-indigo-600 focus:ring-[#0F4E57] checked:bg-[#0F4E57]">
+                                    <label for="cicilan-12-Bulan"
+                                        class="block text-sm font-medium leading-6 text-gray-900">Cicilan 12
+                                        Bulan</label>
+                                </div>
+                                <div class="flex items-center gap-x-3">
+                                    <input id="cicilan-24-bulan" name="push-notifications" type="radio"
+                                        class="h-4 w-4 border-gray-300 text-indigo-600 focus:ring-[#0F4E57] checked:bg-[#0F4E57]">
+                                    <label for="cicilan-24-bulan"
+                                        class="block text-sm font-medium leading-6 text-gray-900">Cicilan 24
+                                        Bulan</label>
+                                </div>
+                                <div class="flex items-center gap-x-3">
+                                    <input id="cicilan-48-bulan" name="push-notifications" type="radio"
+                                        class="h-4 w-4 border-gray-300 text-indigo-600 focus:ring-[#0F4E57] checked:bg-[#0F4E57]">
+                                    <label for="cicilan-48-bulan"
+                                        class="block text-sm font-medium leading-6 text-gray-900">Cicilan 48
+                                        Bulan</label>
+                                </div>
+                                <div class="flex items-center gap-x-3">
+                                    <input id="cicilan-60-bulan" name="push-notifications" type="radio"
+                                        class="h-4 w-4 border-gray-300 text-indigo-600 focus:ring-[#0F4E57] checked:bg-[#0F4E57]">
+                                    <label for="cicilan-60-bulan"
+                                        class="block text-sm font-medium leading-6 text-gray-900">Cicilan 60
+                                        Bulan</label>
                                 </div>
                             </div>
                         </div>
+                    </div>
+                </div>
+                <div class="flex justify-end">
+                    <div class="text-[##0F4E57]">
+                        <button class="w-24 h-10 border-2 border-[#0F4E57] rounded-lg me-2">Clear</button>
+                    </div>
+                    <div class="text-white">
+                        <button class="w-24 h-10 bg-[#0F4E57] rounded-lg">Submit</button>
                     </div>
                 </div>
             </form>

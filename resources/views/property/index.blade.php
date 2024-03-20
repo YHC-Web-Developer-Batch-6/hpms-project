@@ -184,7 +184,7 @@
                     </div>
                     <div id="default-styled-tab-content">
 
-                        <div class="hidden px-4 rounded-lg bg-white dark:bg-gray-800" id="styled-profile"
+                        <div class="hidden px-4 py-4 rounded-lg bg-white dark:bg-gray-800" id="styled-profile"
                             role="tabpanel" aria-labelledby="profile-tab">
                             <div class="flex mb-3 justify-between">
                                 <div class="flex">
@@ -207,8 +207,8 @@
                                         class="bg-white hover:bg-gray-100 text-gray-800 font-semibold py-2 px-4 border border-[#28808C] rounded shadow">Tersedia</a>
                                 </div>
                             </div>
-                            <table id="example" class="" style="width:100%">
-                                <thead>
+                            <table id="example" class="max-w-full">
+                                <thead class="">
                                     <tr>
                                         <th>No.</th>
                                         <th><span class="sr-only">Image</span></th>
@@ -284,17 +284,6 @@
                                         @endif
                                     @endforeach
                                 </tbody>
-
-                                <tfoot>
-                                    <tr>
-                                        <th>No.</th>
-                                        <th><span class="sr-only">Image</span></th>
-                                        <th>Property</th>
-                                        <th>Date</th>
-                                        <th>Status</th>
-                                        <th>Action</th>
-                                    </tr>
-                                </tfoot>
                             </table>
                         </div>
                         <div class="hidden p-4 rounded-lg bg-white dark:bg-gray-800" id="styled-dashboard"
@@ -311,7 +300,17 @@
 <script>
     $(document).ready(function() {
         $('#example').DataTable({
-            // Add any customization options here
+            lengthMenu: [
+                [5, 10, 25, 50, -1],
+                [5, 10, 25, 50, "All"]
+            ],
+
+            // $('.dataTables_filter').addClass('mt-4 mb-4');
+            // $('#example_filter label').addClass('sr-only');
+            // $('#example_filter input').addClass(
+            //     'w-full px-4 py-2 border rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500'
+            // );
+            // Tambahkan opsi tambahan di sini sesuai kebutuhan
         });
     });
 </script>

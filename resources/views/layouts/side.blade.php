@@ -159,7 +159,7 @@
                 </li>
                 <li>
                     <a href="{{ url('finance') }}"
-                        class="{{ request()->is('dashboard') || request()->is('dashboard/*') ? 'bg-[#D9D9D9] bg-opacity-50' : '' }} flex items-center p-3 text-white rounded-lg dark:text-white hover:bg-[#D9D9D9] hover:bg-opacity-50  group">
+                        class="{{ request()->is('finance') || request()->is('finance/*') ? 'bg-[#D9D9D9] bg-opacity-50' : '' }} flex items-center p-3 text-white rounded-lg dark:text-white hover:bg-[#D9D9D9] hover:bg-opacity-50  group">
                         <svg width="33" height="33" viewBox="0 0 33 33" fill="none"
                             xmlns="http://www.w3.org/2000/svg">
                             <mask id="mask0_10_2006" style="mask-type:luminance" maskUnits="userSpaceOnUse" x="0"
