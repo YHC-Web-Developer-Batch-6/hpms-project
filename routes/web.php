@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\FinanceController;
 use App\Http\Controllers\PropertyController;
 use App\Http\Controllers\TransactionController;
 use Illuminate\Support\Facades\Route;
@@ -32,6 +33,8 @@ Route::middleware(['auth', 'verified', 'role:admin'])->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
     Route::get('/property', [PropertyController::class, 'index'])->name('property.index');
     Route::get('/property/add', [PropertyController::class, 'store'])->name('property.add');
+    Route::get('/finance', [FinanceController::class, 'index'])->name('finance.index');
+    Route::get('/finance/show', [FinanceController::class, 'show'])->name('finance.show');
     Route::get('/transaction', [TransactionController::class, 'index'])->name('transaction.index');
 });
 
