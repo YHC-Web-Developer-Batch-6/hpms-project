@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Property;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -13,6 +14,10 @@ class HomeController extends Controller
 
     public function dashboard()
     {
-        return view('dashboard');
+        $totalProperty = Property::all()->count();
+
+        return view('dashboard', [
+            'totalProperty' => $totalProperty,
+        ]);
     }
 }

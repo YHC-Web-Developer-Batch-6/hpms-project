@@ -20,7 +20,7 @@
                         </svg>
 
                         <div class="mx-5">
-                            <h4 class="text-xl font-semibold text-gray-700">4644</h4>
+                            <h4 class="text-xl font-semibold text-gray-700">{{ $totalProperty }}</h4>
                             <div class="text-gray-500">Property</div>
                         </div>
                     </div>
