@@ -26,9 +26,9 @@
                 </div>
                 <div class="flex justify-start">
                     <a href="#"
-                        class="bg-white hover:bg-gray-100 text-gray-800 font-semibold py-2 px-4 border border-[#28808C] rounded shadow mr-2">Sold</a>
+                        class="bg-white hover:bg-gray-100 text-gray-800 font-semibold py-2 px-4 border border-[#28808C] rounded shadow mr-2">Terjual</a>
                     <a href="#"
-                        class="bg-white hover:bg-gray-100 text-gray-800 font-semibold py-2 px-4 border border-[#28808C] rounded shadow">Available</a>
+                        class="bg-white hover:bg-gray-100 text-gray-800 font-semibold py-2 px-4 border border-[#28808C] rounded shadow">Tersedia</a>
                 </div>
             </div>
             <div class="relative overflow-x-auto shadow-md sm:rounded-lg max-w-full">
