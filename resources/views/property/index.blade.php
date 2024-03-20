@@ -250,6 +250,176 @@
                                                     @endif
                                                 </td>
                                                 <td class="flex px-9 my-8 justify-around">
+                                                    <div x-data="{ isOpen: false }">
+                                                        <a href="#" @click.prevent="isOpen = true">
+                                                            <svg xmlns="http://www.w3.org/2000/svg" width="26"
+                                                                height="22" viewBox="0 0 192 512">
+                                                                <!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
+                                                                <path
+                                                                    d="M48 80a48 48 0 1 1 96 0A48 48 0 1 1 48 80zM0 224c0-17.7 14.3-32 32-32H96c17.7 0 32 14.3 32 32V448h32c17.7 0 32 14.3 32 32s-14.3 32-32 32H32c-17.7 0-32-14.3-32-32s14.3-32 32-32H64V256H32c-17.7 0-32-14.3-32-32z" />
+                                                            </svg>
+                                                        </a>
+                                                        <div x-show="isOpen" @click.away="isOpen = false"
+                                                            class="fixed z-10 inset-0 overflow-y-auto">
+                                                            <div
+                                                                class="flex items-center justify-center min-h-screen pt-4 px-4 pb-20 text-center sm:block sm:p-0">
+                                                                <div class="fixed inset-0 transition-opacity"
+                                                                    aria-hidden="true">
+                                                                    <div
+                                                                        class="absolute inset-0 bg-gray-500 opacity-75">
+                                                                    </div>
+                                                                </div>
+
+                                                                <!-- Isi Pop-up -->
+                                                                <span
+                                                                    class="hidden sm:inline-block sm:align-middle sm:h-screen"
+                                                                    aria-hidden="true">&#8203;</span>
+                                                                <div x-show="isOpen"
+                                                                    class="inline-block align-bottom bg-white rounded-lg text-left overflow-hidden shadow-xl transform transition-all sm:my-8 sm:align-middle sm:max-w-2xl sm:w-full">
+                                                                    <div
+                                                                        class="bg-gray-50 px-4 py-3 sm:px-6 sm:flex border-b border-[#28808C]">
+                                                                        <p class="text-2xl font-bold px-4 py-2">Detail
+                                                                        </p>
+                                                                    </div>
+                                                                    <div
+                                                                        class="bg-gray-100 px-4 pt-5 pb-4 sm:p-6 sm:pb-4">
+                                                                        <!-- Konten Pop-up -->
+                                                                        <div class="sm:flex sm:items-start">
+                                                                            <div
+                                                                                class="text-center sm:mt-0 sm:text-left w-full overflow-y-auto">
+                                                                                <p class="text-2xl font-bold py-2">
+                                                                                    Perumahan Manggis
+                                                                                </p>
+                                                                                <p
+                                                                                    class="items-right justify-end text-right text-xs font-semibold mb-2 text-[#28808C]">
+                                                                                    Diterbitkan :
+                                                                                    <span>14
+                                                                                        Februari</span>
+                                                                                </p>
+                                                                                <div
+                                                                                    class="bg-black rounded-lg w-full h-80">
+                                                                                </div>
+                                                                                <div class="flex justify-between my-10">
+                                                                                    <div class="block justify-start">
+                                                                                        <p
+                                                                                            class="text-xl font-bold text-[#0F4E57]">
+                                                                                            Umum
+                                                                                        </p>
+                                                                                        <p
+                                                                                            class="text-sm text-black mt-4">
+                                                                                            <span
+                                                                                                class="w-20 mr-20">Tipe</span><span
+                                                                                                class="ml-4">:</span><span
+                                                                                                class="ml-4">Rumah</span>
+                                                                                        </p>
+                                                                                        <p
+                                                                                            class="text-sm text-black mt-2">
+                                                                                            <span
+                                                                                                class="w-20 mr-3">Luas
+                                                                                                Bangunan</span><span
+                                                                                                class="ml-4">:</span><span
+                                                                                                class="ml-4">64</span>
+                                                                                        </p>
+                                                                                        <p
+                                                                                            class="text-sm text-black mt-2">
+                                                                                            <span
+                                                                                                class="w-20 mr-10">Luas
+                                                                                                Tanah</span><span
+                                                                                                class="ml-[15px]">:</span><span
+                                                                                                class="ml-4">166</span>
+                                                                                        </p>
+                                                                                        <p
+                                                                                            class="text-sm text-black mt-2">
+                                                                                            <span
+                                                                                                class="w-20 mr-12">Sertifikasi</span><span
+                                                                                                class="ml-4">:</span><span
+                                                                                                class="ml-4">SHM -
+                                                                                                Sertifikat Hak
+                                                                                                Milik</span>
+                                                                                        </p>
+                                                                                        <p
+                                                                                            class="text-sm text-black mt-2">
+                                                                                            <span
+                                                                                                class="w-20 mr-16">Lokasi</span>
+                                                                                            <span
+                                                                                                class="ml-4">:</span><span
+                                                                                                class="ml-4">Banjarmasin,
+                                                                                                Indonesia</span>
+                                                                                        </p>
+                                                                                        <p
+                                                                                            class="text-sm text-black mt-2">
+                                                                                            <span
+                                                                                                class="w-20 mr-[68px]">Harga</span><span
+                                                                                                class="ml-4">:</span><span
+                                                                                                class="ml-4">Rp.640.000.000</span>
+                                                                                        </p>
+                                                                                        <p
+                                                                                            class="text-sm text-black mt-2">
+                                                                                            <span
+                                                                                                class="w-20 mr-[86px]">DP</span><span
+                                                                                                class="ml-4">:</span><span
+                                                                                                class="ml-4">Rp.60.000.000</span>
+                                                                                        </p>
+
+                                                                                    </div>
+                                                                                    <div class="block justify-end">
+                                                                                        <p
+                                                                                            class="text-xl font-bold text-[#0F4E57]">
+                                                                                            Metode Pembayaran
+                                                                                        </p>
+                                                                                        <ul
+                                                                                            class="text-sm text-black mt-4 list-disc ml-4">
+                                                                                            <li>Payment Full</li>
+                                                                                            <li>Cicilan 12 Bulan</li>
+                                                                                            <li>Cicilan 24 Bulan</li>
+                                                                                            <li>Cicilan 48 Bulan</li>
+                                                                                            <li>Cicilan 60 Bulan</li>
+                                                                                        </ul>
+                                                                                    </div>
+                                                                                </div>
+                                                                                <div class="block">
+                                                                                    <p
+                                                                                        class="text-xl font-bold text-black">
+                                                                                        Deskripsi</p>
+                                                                                    <p
+                                                                                        class="text-sm font-normal my-4 text-wrap">
+                                                                                        "Lorem ipsum
+                                                                                        dolor sit amet,
+                                                                                        consectetur adipisicing elit,
+                                                                                        sed do eiusmod tempor incididunt
+                                                                                        ut labore et dolore magna
+                                                                                        aliqua. Ut enim ad minim veniam,
+                                                                                        quis nostrud exercitation
+                                                                                        ullamco laboris nisi ut aliquip
+                                                                                        ex ea commodo consequat. Duis
+                                                                                        aute irure dolor in
+                                                                                        reprehenderit in voluptate velit
+                                                                                        esse cillum dolore eu fugiat
+                                                                                        nulla pariatur. Excepteur sint
+                                                                                        occaecat cupidatat non proident,
+                                                                                        sunt in culpa qui officia
+                                                                                        deserunt mollit anim id est
+                                                                                        laborum."
+                                                                                    </p>
+
+                                                                                </div>
+
+
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                    <!-- Tombol Tutup Pop-up -->
+                                                                    <div
+                                                                        class="bg-gray-50 px-4 py-3 sm:px-6 sm:flex sm:flex-row-reverse border-t border-[#28808C]">
+                                                                        <button @click="isOpen = false" type="button"
+                                                                            class="w-full inline-flex justify-center rounded-md border border-transparent shadow-sm px-4 py-2 bg-[#3f9aa7] text-base font-medium text-white hover:bg-[#65adb8] focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#65adb8] sm:ml-3 sm:w-auto sm:text-sm">
+                                                                            Tutup
+                                                                        </button>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
                                                     <a href="">
                                                         <svg width="26" height="26" viewBox="0 0 33 33"
                                                             fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -257,10 +427,11 @@
                                                                 stroke-width="2" stroke-linecap="round"
                                                                 stroke-linejoin="round" />
                                                             <path d="M31.625 4.125H1.375V11H31.625V4.125Z"
-                                                                stroke="black" stroke-width="2" stroke-linecap="round"
-                                                                stroke-linejoin="round" />
-                                                            <path d="M13.75 16.5H19.25" stroke="black" stroke-width="2"
+                                                                stroke="black" stroke-width="2"
                                                                 stroke-linecap="round" stroke-linejoin="round" />
+                                                            <path d="M13.75 16.5H19.25" stroke="black"
+                                                                stroke-width="2" stroke-linecap="round"
+                                                                stroke-linejoin="round" />
                                                         </svg>
 
                                                     </a>
@@ -314,3 +485,4 @@
         });
     });
 </script>
+<script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.js" defer></script>
