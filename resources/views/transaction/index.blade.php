@@ -7,7 +7,7 @@
     <div class="p-4 sm:ml-64">
         <div class="pb-8">
             <p class="text-3xl font-bold">Transactions</p>
-            <p class="">Periksa Kembali Transaksi Anda!</p>
+            <p class="text-black">Periksa Kembali Transaksi Anda!</p>
         </div>
         <div class="flex flex-col gap-6">
             <div class="flex justify-between">
