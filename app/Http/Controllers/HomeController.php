@@ -20,4 +20,9 @@ class HomeController extends Controller
             'totalProperty' => $totalProperty,
         ]);
     }
+
+    public function finance()
+    {
+        return view('finance.index');
+    }
 }
