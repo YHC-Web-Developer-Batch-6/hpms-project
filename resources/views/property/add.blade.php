@@ -14,7 +14,7 @@
                             <label for="judul" class="block text-sm font-medium leading-6 text-gray-900">Judul</label>
                             <div class="mt-2">
                                 <div
-                                    class="flex rounded-md shadow-sm ring-1 ring-inset ring-gray-300 focus-within:ring-2 focus-within:ring-inset focus-within:ring-indigo-600 sm:max-w-full">
+                                    class="flex rounded-md shadow-sm ring-1 ring-inset ring-gray-300 focus-within:ring-2 focus-within:ring-inset focus-within:ring-[#0F4E57] sm:max-w-full">
 
                                     <input type="text" name="judul" id="judul" autocomplete="judul"
                                         class="block flex-1 border-0 bg-transparent py-1.5 pl-1 text-gray-900 placeholder:text-gray-400 focus:ring-0 sm:text-sm sm:leading-6">
@@ -25,14 +25,14 @@
                             <label for="tipe" class="block text-sm font-medium leading-6 text-gray-900">Tipe</label>
                             <div class="mt-2">
                                 <div
-                                    class="flex rounded-md shadow-sm ring-1 ring-inset ring-gray-300 focus-within:ring-2 focus-within:ring-inset focus-within:ring-indigo-600 sm:max-w-full">
+                                    class="flex rounded-md shadow-sm ring-1 ring-inset ring-gray-300 focus-within:ring-2 focus-within:ring-inset focus-within:ring-[#0F4E57] sm:max-w-full">
                                     <select id="tipe"
-                                        class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                                        class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-[#0F4E57] focus:border-[#0F4E57] block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
                                         <option selected>Pilih Tipe</option>
-                                        <option value="US">Rumah</option>
-                                        <option value="CA">Tanah</option>
-                                        <option value="FR">Ruko</option>
-                                        <option value="DE">Gedung</option>
+                                        <option value="rumah">Rumah</option>
+                                        <option value="Tanah">Tanah</option>
+                                        <option value="Ruko">Ruko</option>
+                                        <option value="Gedung">Gedung</option>
                                     </select>
                                 </div>
                             </div>
@@ -42,7 +42,7 @@
                                 Property</label>
                             <div class="mt-2">
                                 <div
-                                    class="flex rounded-md shadow-sm ring-1 ring-inset ring-gray-300 focus-within:ring-2 focus-within:ring-inset focus-within:ring-indigo-600 sm:max-w-full">
+                                    class="flex rounded-md shadow-sm ring-1 ring-inset ring-gray-300 focus-within:ring-2 focus-within:ring-inset focus-within:ring-[#0F4E57] sm:max-w-full">
 
                                     <input type="text" name="luas_property" id="luas_property"
                                         autocomplete="luas_property"
@@ -55,7 +55,7 @@
                                 Tanah</label>
                             <div class="mt-2">
                                 <div
-                                    class="flex rounded-md shadow-sm ring-1 ring-inset ring-gray-300 focus-within:ring-2 focus-within:ring-inset focus-within:ring-indigo-600 sm:max-w-full">
+                                    class="flex rounded-md shadow-sm ring-1 ring-inset ring-gray-300 focus-within:ring-2 focus-within:ring-inset focus-within:ring-[#0F4E57] sm:max-w-full">
 
                                     <input type="text" name="username" id="username" autocomplete="username"
                                         class="block flex-1 border-0 bg-transparent py-1.5 pl-1 text-gray-900 placeholder:text-gray-400 focus:ring-0 sm:text-sm sm:leading-6">
@@ -70,7 +70,7 @@
                                 class="block text-sm font-medium leading-6 text-gray-900">Sertifikasi</label>
                             <div class="mt-2">
                                 <div
-                                    class="flex rounded-md shadow-sm ring-1 ring-inset ring-gray-300 focus-within:ring-2 focus-within:ring-inset focus-within:ring-indigo-600 sm:max-w-full">
+                                    class="flex rounded-md shadow-sm ring-1 ring-inset ring-gray-300 focus-within:ring-2 focus-within:ring-inset focus-within:ring-[#0F4E57] sm:max-w-full">
 
                                     <input type="text" name="sertifikasi" id="sertifikasi" autocomplete="sertifikasi"
                                         class="block flex-1 border-0 bg-transparent py-1.5 pl-1 text-gray-900 placeholder:text-gray-400 focus:ring-0 sm:text-sm sm:leading-6">
@@ -82,7 +82,7 @@
                                 class="block text-sm font-medium leading-6 text-gray-900">Dokumentasi</label>
                             <div class="mt-2">
                                 <div
-                                    class="flex rounded-md shadow-sm ring-1 ring-inset ring-gray-300 focus-within:ring-2 focus-within:ring-inset focus-within:ring-indigo-600 sm:max-w-full">
+                                    class="flex rounded-md shadow-sm ring-1 ring-inset ring-gray-300 focus-within:ring-2 focus-within:ring-inset focus-within:ring-[#0F4E57] sm:max-w-full">
                                     <input
                                         class="block w-full text-sm text-gray-900 border border-gray-300 rounded-lg cursor-pointer bg-gray-50 dark:text-gray-400 focus:outline-none dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400"
                                         aria-describedby="user_avatar_help" id="dokumentasi" type="file">
@@ -94,7 +94,7 @@
                                 class="block text-sm font-medium leading-6 text-gray-900">Lokasi</label>
                             <div class="mt-2">
                                 <div
-                                    class="flex rounded-md shadow-sm ring-1 ring-inset ring-gray-300 focus-within:ring-2 focus-within:ring-inset focus-within:ring-indigo-600 sm:max-w-full">
+                                    class="flex rounded-md shadow-sm ring-1 ring-inset ring-gray-300 focus-within:ring-2 focus-within:ring-inset focus-within:ring-[#0F4E57] sm:max-w-full">
 
                                     <input type="text" name="lokasi" id="lokasi" autocomplete="lokasi"
                                         class="block flex-1 border-0 bg-transparent py-1.5 pl-1 text-gray-900 placeholder:text-gray-400 focus:ring-0 sm:text-sm sm:leading-6">
@@ -103,13 +103,15 @@
                         </div>
                     </div>
                 </div>
+                {{-- textarea --}}
                 <div class="max-w-full">
                     <label for="about" class="block text-sm font-medium leading-6 text-gray-900">Descriptions</label>
                     <div class="mt-2">
                         <textarea id="about" name="about" rows="4"
-                            class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"></textarea>
+                            class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-[#0F4E57] sm:text-sm sm:leading-6"></textarea>
                     </div>
                 </div>
+                {{-- detail Harga --}}
                 <h1 class="font-medium text-2xl mt-3 mb-3">Detail Harga</h1>
                 <div class="grid md:grid-cols-2 gap-4">
                     <div class="max-w-full">
@@ -118,7 +120,7 @@
                                 class="block text-sm font-medium leading-6 text-gray-900">Harga</label>
                             <div class="mt-2">
                                 <div
-                                    class="flex rounded-md shadow-sm ring-1 ring-inset ring-gray-300 focus-within:ring-2 focus-within:ring-inset focus-within:ring-indigo-600 sm:max-w-full">
+                                    class="flex rounded-md shadow-sm ring-1 ring-inset ring-gray-300 focus-within:ring-2 focus-within:ring-inset focus-within:ring-[#0F4E57] sm:max-w-full">
 
                                     <input type="text" name="harga" id="harga" autocomplete="harga"
                                         class="block flex-1 border-0 bg-transparent py-1.5 pl-1 text-gray-900 placeholder:text-gray-400 focus:ring-0 sm:text-sm sm:leading-6">
@@ -130,7 +132,7 @@
                                 Muka</label>
                             <div class="mt-2">
                                 <div
-                                    class="flex rounded-md shadow-sm ring-1 ring-inset ring-gray-300 focus-within:ring-2 focus-within:ring-inset focus-within:ring-indigo-600 sm:max-w-full">
+                                    class="flex rounded-md shadow-sm ring-1 ring-inset ring-gray-300 focus-within:ring-2 focus-within:ring-inset focus-within:ring-[#0F4E57] sm:max-w-full">
 
                                     <input type="text" name="uang_muka" id="uang_muka" autocomplete="uang_muka"
                                         class="block flex-1 border-0 bg-transparent py-1.5 pl-1 text-gray-900 placeholder:text-gray-400 focus:ring-0 sm:text-sm sm:leading-6">
@@ -144,34 +146,34 @@
                                 Pembayaran</label>
                             <div class="mt-2">
                                 <div class="flex items-center gap-x-3">
-                                    <input id="full-payment" name="push-notifications" type="radio"
+                                    <input id="full-payment" name="push-notifications" type="checkbox"
                                         class="h-4 w-4 border-gray-300 text-indigo-600 focus:ring-[#0F4E57] checked:bg-[#0F4E57]">
                                     <label for="full-payment"
                                         class="block text-sm font-medium leading-6 text-gray-900">Full Payment</label>
                                 </div>
                                 <div class="flex items-center gap-x-3">
-                                    <input id="cicilan-12-Bulan" name="push-notifications" type="radio"
+                                    <input id="cicilan-12-Bulan" name="push-notifications" type="checkbox"
                                         class="h-4 w-4 border-gray-300 text-indigo-600 focus:ring-[#0F4E57] checked:bg-[#0F4E57]">
                                     <label for="cicilan-12-Bulan"
                                         class="block text-sm font-medium leading-6 text-gray-900">Cicilan 12
                                         Bulan</label>
                                 </div>
                                 <div class="flex items-center gap-x-3">
-                                    <input id="cicilan-24-bulan" name="push-notifications" type="radio"
+                                    <input id="cicilan-24-bulan" name="push-notifications" type="checkbox"
                                         class="h-4 w-4 border-gray-300 text-indigo-600 focus:ring-[#0F4E57] checked:bg-[#0F4E57]">
                                     <label for="cicilan-24-bulan"
                                         class="block text-sm font-medium leading-6 text-gray-900">Cicilan 24
                                         Bulan</label>
                                 </div>
                                 <div class="flex items-center gap-x-3">
-                                    <input id="cicilan-48-bulan" name="push-notifications" type="radio"
+                                    <input id="cicilan-48-bulan" name="push-notifications" type="checkbox"
                                         class="h-4 w-4 border-gray-300 text-indigo-600 focus:ring-[#0F4E57] checked:bg-[#0F4E57]">
                                     <label for="cicilan-48-bulan"
                                         class="block text-sm font-medium leading-6 text-gray-900">Cicilan 48
                                         Bulan</label>
                                 </div>
                                 <div class="flex items-center gap-x-3">
-                                    <input id="cicilan-60-bulan" name="push-notifications" type="radio"
+                                    <input id="cicilan-60-bulan" name="push-notifications" type="checkbox"
                                         class="h-4 w-4 border-gray-300 text-indigo-600 focus:ring-[#0F4E57] checked:bg-[#0F4E57]">
                                     <label for="cicilan-60-bulan"
                                         class="block text-sm font-medium leading-6 text-gray-900">Cicilan 60
