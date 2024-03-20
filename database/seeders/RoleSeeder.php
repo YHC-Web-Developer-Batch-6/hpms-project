@@ -47,6 +47,10 @@ class RoleSeeder extends Seeder
             'password' => bcrypt('password'),
         ]);
 
+        // assign avatar
+        $imageUrl = 'https://media.licdn.com/dms/image/C4E03AQGO448nAOrvfw/profile-displayphoto-shrink_400_400/0/1516929476300?e=2147483647&v=beta&t=i9xTbCh2nx3upQEx53PPtGP28Da2T7i_AJOTsqQRliE';
+        $admin->addMediaFromUrl($imageUrl)->usingFileName('admin.png')->toMediaCollection('avatar');
+
         // assign role
         $admin->assignRole('admin');
     }
