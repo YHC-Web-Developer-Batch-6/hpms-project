@@ -78,7 +78,7 @@
                                     <tbody>
                                         @foreach ($properties as $index => $property)
                                             @if ($property->is_archive === 0)
-                                                <tr class=" border-b ">
+                                                <tr class=" border-b odd:bg-white ">
                                                     <th scope="row"
                                                         class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap ">
                                                         {{ ++$index }}
@@ -391,7 +391,7 @@
                                                                     stroke-linejoin="round" />
                                                             </svg>
                                                         </a>
-                                                        <a href="">
+                                                        <a href="{{ route('property.update') }}">
                                                             <svg width="30" height="26" viewBox="0 0 35 35"
                                                                 fill="none" xmlns="http://www.w3.org/2000/svg">
                                                                 <mask id="mask0_15_2159" style="mask-type:luminance"
