@@ -13,6 +13,11 @@ class PropertyController extends Controller
     public function index()
     {
         $properties = Property::all();
+
+        if (request()->get('sold') !== null) {
+            $properties = $properties->where('is_sold', request('sold'));
+        }
+
         return view('property.index', [
             'properties' => $properties
         ]);

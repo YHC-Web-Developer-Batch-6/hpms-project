@@ -201,9 +201,9 @@
                                     </button>
                                 </div>
                                 <div class="flex justify-start">
-                                    <a href="#"
+                                    <a href="{{ (request('sold') === '1') ? route('property.index') : route('property.index', ['sold' => '1']) }}"
                                         class="bg-white hover:bg-gray-100 text-gray-800 font-semibold py-2 px-4 border border-[#28808C] rounded shadow mr-2">Terjual</a>
-                                    <a href="#"
+                                    <a href="{{ (request('sold') === '0') ? route('property.index') : route('property.index', ['sold' => '0']) }}"
                                         class="bg-white hover:bg-gray-100 text-gray-800 font-semibold py-2 px-4 border border-[#28808C] rounded shadow">Tersedia</a>
                                 </div>
                             </div>
