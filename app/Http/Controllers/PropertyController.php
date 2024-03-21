@@ -12,14 +12,17 @@ class PropertyController extends Controller
      */
     public function index()
     {
-        $properties = Property::all();
+        $propertiesArchive = Property::where('is_archive', 1)->get();
+        $propertiesUnarchive = Property::where('is_archive', 0)->get();
 
         if (request()->get('sold') !== null) {
-            $properties = $properties->where('is_sold', request('sold'));
+            $propertiesArchive = Property::where('is_archive', 1)->where('is_sold', request('sold'))->get();
+            $propertiesUnarchive = Property::where('is_archive', 0)->where('is_sold', request('sold'))->get();
         }
 
         return view('property.index', [
-            'properties' => $properties
+            'propertiesArchive' => $propertiesArchive,
+            'propertiesUnarchive' => $propertiesUnarchive
         ]);
     }
 
@@ -90,7 +93,7 @@ class PropertyController extends Controller
     {
         $property = Property::find($id);
         $property->update([
-            'is_archive' => 1,
+            'is_archive' => !$property->is_archive,
         ]);
         
         return redirect()->route('property.index');
