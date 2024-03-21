@@ -32,7 +32,9 @@ Route::middleware(['auth', 'verified', 'role:admin'])->group(function () {
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
     Route::get('/property', [PropertyController::class, 'index'])->name('property.index');
-    Route::get('/property/add', [PropertyController::class, 'store'])->name('property.add');
+    Route::get('/property/create', [PropertyController::class, 'create'])->name('property.create');
+    Route::post('/property/store', [PropertyController::class, 'store'])->name('property.store');
+    Route::get('/property/archive/{id}', [PropertyController::class, 'archive'])->name('property.archive');
     Route::get('/finance', [FinanceController::class, 'index'])->name('finance.index');
     Route::get('/finance/show', [FinanceController::class, 'show'])->name('finance.show');
     Route::get('/transaction', [TransactionController::class, 'index'])->name('transaction.index');
