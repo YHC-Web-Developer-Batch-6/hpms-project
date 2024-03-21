@@ -13,11 +13,11 @@
             <div class="relative overflow-x-auto shadow-md sm:rounded-lg max-w-full">
                 {{-- data table --}}
                 <div class="card bg-white w-full">
-                    <div class="mb-4  dark:border-gray-700">
+                    <div class="mb-4  border-gray-700">
                         <ul class="flex flex-wrap -mb-px text-sm font-medium text-center" id="default-styled-tab"
                             data-tabs-toggle="#default-styled-tab-content"
-                            data-tabs-active-classes="text-[#3D889B] hover:text-[#7CB6C5] dark:text-[#3D889B] dark:hover:text-[#7CB6C5] border-[#0F4E57] dark:border-[#0F4E57]"
-                            data-tabs-inactive-classes="dark:border-transparent text-gray-500 hover:text-gray-600 dark:text-gray-400 border-gray-100 hover:border-gray-300 dark:border-gray-700 dark:hover:text-gray-300"
+                            data-tabs-active-classes="text-[#3D889B] dark:text-[#3D889B] hover:text-[#7CB6C5] dark:hover:text-[#7CB6C5] border-[#0F4E57] dark:border-[#0F4E57]"
+                            data-tabs-inactive-classes="border-transparent text-gray-500 hover:text-gray-600 text-gray-400 border-gray-100 hover:border-gray-300 border-gray-700 hover:text-gray-300"
                             role="tablist">
                             <li class="me-2" role="presentation">
                                 <button class="inline-block p-4 border-b-2 rounded-t-lg" id="profile-styled-tab"
@@ -26,7 +26,7 @@
                             </li>
                             <li class="me-2" role="presentation">
                                 <button
-                                    class="inline-block p-4 border-b-2 rounded-t-lg hover:text-gray-600 hover:border-gray-300 dark:hover:text-gray-300"
+                                    class="inline-block p-4 border-b-2 rounded-t-lg hover:text-gray-600 hover:border-gray-300 "
                                     id="dashboard-styled-tab" data-tabs-target="#styled-dashboard" type="button"
                                     role="tab" aria-controls="dashboard" aria-selected="false">Di
                                     Arsipkan</button>
@@ -34,13 +34,13 @@
                         </ul>
                     </div>
                     <div id="default-styled-tab-content">
-                        <div class="hidden px-4 py-4 rounded-lg bg-white dark:bg-gray-800" id="styled-profile"
-                            role="tabpanel" aria-labelledby="profile-tab">
+                        <div class="hidden px-4 py-4 rounded-lg bg-white " id="styled-profile" role="tabpanel"
+                            aria-labelledby="profile-tab">
                             <div class="flex mb-3 justify-between sm:max-w-full">
                                 <div class="flex">
                                     <button type="button"
                                         onclick="window.location.href = '{{ route('property.create') }}'"
-                                        class="text-gray-100 bg-[#28808C] hover:bg-[#3D889B]  border border-gray-200 focus:ring-4 focus:outline-none focus:ring-gray-100 font-medium rounded-lg text-sm px-5 py-2 text-center inline-flex items-center dark:focus:ring-gray-600 dark:bg-gray-800 dark:border-gray-700 dark:text-white dark:hover:bg-gray-700 me-6">
+                                        class="text-gray-100 bg-[#28808C] hover:bg-[#3D889B]  border border-gray-200 focus:ring-4 focus:outline-none focus:ring-gray-100 font-medium rounded-lg text-sm px-5 py-2 text-center inline-flex items-center me-6">
                                         <svg xmlns="http://www.w3.org/2000/svg" class="pr-2" width=24 height=24
                                             viewBox="0 0 448 512"><!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
                                             <path
@@ -65,7 +65,7 @@
                             </div>
                             <div class="overflow-x-auto">
                                 <table id="example" class="max-w-full">
-                                    <thead class="">
+                                    <thead class="bg-[#3D889B]">
                                         <tr>
                                             <th>No.</th>
                                             <th><span class="sr-only">Image</span></th>
@@ -78,10 +78,9 @@
                                     <tbody>
                                         @foreach ($properties as $index => $property)
                                             @if ($property->is_archive === 0)
-                                                <tr
-                                                    class="odd:bg-white odd:dark:bg-gray-300 even:bg-gray-50 even:dark:bg-gray-200 border-b dark:border-gray-600">
+                                                <tr class=" border-b ">
                                                     <th scope="row"
-                                                        class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-black">
+                                                        class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap ">
                                                         {{ ++$index }}
                                                     </th>
                                                     <td class="p-4">
@@ -158,10 +157,80 @@
                                                                                         class="bg-black rounded-lg w-full h-80">
                                                                                     </div>
                                                                                     <div
-                                                                                        class="flex justify-between my-10">
-                                                                                        <div
-                                                                                            class="block justify-start">
-                                                                                            <p
+                                                                                        class="md:flex md:justify-between block my-10 ">
+                                                                                        <div class="flex">
+                                                                                            <div class="block">
+                                                                                                <p
+                                                                                                    class="text-xl font-bold text-start text-[#0F4E57]">
+                                                                                                    Umum
+                                                                                                </p>
+                                                                                                <p
+                                                                                                    class="text-sm text-black text-start">
+                                                                                                    Tipe
+                                                                                                </p>
+                                                                                                <p
+                                                                                                    class="text-sm text-black text-start">
+                                                                                                    Luas Bangunan
+                                                                                                </p>
+                                                                                                <p
+                                                                                                    class="text-sm text-black text-start">
+                                                                                                    Luas Tanah</p>
+                                                                                                <p
+                                                                                                    class="text-sm text-black text-start">
+                                                                                                    Sertifikasi</p>
+                                                                                                <p
+                                                                                                    class="text-sm text-black text-start">
+                                                                                                    Alamat Lokasi
+                                                                                                </p>
+                                                                                                <p
+                                                                                                    class="text-sm text-black text-start">
+                                                                                                    Harga</p>
+                                                                                                <p
+                                                                                                    class="text-sm text-black text-start">
+                                                                                                    DP</p>
+                                                                                            </div>
+                                                                                            <div
+                                                                                                class="block mt-7 ml-8">
+                                                                                                <p> </p>
+                                                                                                <p>:</p>
+                                                                                                <p>:</p>
+                                                                                                <p>:</p>
+                                                                                                <p>:</p>
+                                                                                                <p>:</p>
+                                                                                                <p>:</p>
+                                                                                                <p>:</p>
+                                                                                            </div>
+                                                                                            <div
+                                                                                                class="block mt-7 ml-4">
+                                                                                                <p></p>
+                                                                                                <p
+                                                                                                    class="text-sm text-black text-start">
+                                                                                                    Rumah</p>
+                                                                                                <p
+                                                                                                    class="text-sm text-black text-start">
+                                                                                                    64</p>
+                                                                                                <p
+                                                                                                    class="text-sm text-black text-start">
+                                                                                                    166</p>
+                                                                                                <p
+                                                                                                    class="text-sm text-black text-start">
+                                                                                                    SHM-Sertifikat
+                                                                                                    Hak
+                                                                                                    Milik</p>
+                                                                                                <p
+                                                                                                    class="text-sm text-black text-start">
+                                                                                                    Banjarmasin,
+                                                                                                    Indonesia</p>
+                                                                                                <p
+                                                                                                    class="text-sm text-black text-start">
+                                                                                                    Rp.640.000.000
+                                                                                                </p>
+                                                                                                <p
+                                                                                                    class="text-sm text-black text-start">
+                                                                                                    Rp.60.000.000
+                                                                                                </p>
+                                                                                            </div>
+                                                                                            {{-- <p
                                                                                                 class="text-xl font-bold text-[#0F4E57]">
                                                                                                 Umum
                                                                                             </p>
@@ -220,7 +289,7 @@
                                                                                                     class="w-20 mr-[86px]">DP</span><span
                                                                                                     class="ml-4">:</span><span
                                                                                                     class="ml-4">Rp.60.000.000</span>
-                                                                                            </p>
+                                                                                            </p> --}}
 
                                                                                         </div>
                                                                                         <div class="block justify-end">
@@ -230,14 +299,20 @@
                                                                                             </p>
                                                                                             <ul
                                                                                                 class="text-sm text-black mt-4 list-disc ml-4">
-                                                                                                <li>Payment Full</li>
-                                                                                                <li>Cicilan 12 Bulan
+                                                                                                <li class="text-start">
+                                                                                                    Payment Full
                                                                                                 </li>
-                                                                                                <li>Cicilan 24 Bulan
+                                                                                                <li class="text-start">
+                                                                                                    Cicilan 12 Bulan
                                                                                                 </li>
-                                                                                                <li>Cicilan 48 Bulan
+                                                                                                <li class="text-start">
+                                                                                                    Cicilan 24 Bulan
                                                                                                 </li>
-                                                                                                <li>Cicilan 60 Bulan
+                                                                                                <li class="text-start">
+                                                                                                    Cicilan 48 Bulan
+                                                                                                </li>
+                                                                                                <li class="text-start">
+                                                                                                    Cicilan 60 Bulan
                                                                                                 </li>
                                                                                             </ul>
                                                                                         </div>
@@ -254,24 +329,31 @@
                                                                                             elit,
                                                                                             sed do eiusmod tempor
                                                                                             incididunt
-                                                                                            ut labore et dolore magna
+                                                                                            ut labore et dolore
+                                                                                            magna
                                                                                             aliqua. Ut enim ad minim
                                                                                             veniam,
-                                                                                            quis nostrud exercitation
+                                                                                            quis nostrud
+                                                                                            exercitation
                                                                                             ullamco laboris nisi ut
                                                                                             aliquip
                                                                                             ex ea commodo consequat.
                                                                                             Duis
                                                                                             aute irure dolor in
-                                                                                            reprehenderit in voluptate
+                                                                                            reprehenderit in
+                                                                                            voluptate
                                                                                             velit
-                                                                                            esse cillum dolore eu fugiat
-                                                                                            nulla pariatur. Excepteur
+                                                                                            esse cillum dolore eu
+                                                                                            fugiat
+                                                                                            nulla pariatur.
+                                                                                            Excepteur
                                                                                             sint
                                                                                             occaecat cupidatat non
                                                                                             proident,
-                                                                                            sunt in culpa qui officia
-                                                                                            deserunt mollit anim id est
+                                                                                            sunt in culpa qui
+                                                                                            officia
+                                                                                            deserunt mollit anim id
+                                                                                            est
                                                                                             laborum."
                                                                                         </p>
 
@@ -332,9 +414,9 @@
                                 </table>
                             </div>
                         </div>
-                        <div class="hidden p-4 rounded-lg bg-white dark:bg-gray-800" id="styled-dashboard"
-                            role="tabpanel" aria-labelledby="dashboard-tab">
-                            <p class="text-sm text-gray-500 dark:text-gray-400">Belum Ada Yang di Arsipkan
+                        <div class="hidden p-4 rounded-lg bg-white " id="styled-dashboard" role="tabpanel"
+                            aria-labelledby="dashboard-tab">
+                            <p class="text-sm text-gray-500 ">Belum Ada Yang di Arsipkan
                             </p>
                         </div>
                     </div>
