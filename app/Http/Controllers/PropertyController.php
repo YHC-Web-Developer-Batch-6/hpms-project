@@ -13,6 +13,11 @@ class PropertyController extends Controller
     public function index()
     {
         $properties = Property::all();
+
+        if (request()->get('sold') !== null) {
+            $properties = $properties->where('is_sold', request('sold'));
+        }
+
         return view('property.index', [
             'properties' => $properties
         ]);
@@ -23,7 +28,7 @@ class PropertyController extends Controller
      */
     public function create()
     {
-        //
+        return view('property.create');
     }
 
     /**
@@ -31,7 +36,22 @@ class PropertyController extends Controller
      */
     public function store(Request $request)
     {
-        return view('property.add');
+        $property = Property::create([
+            'user_id' => auth()->user()->id,
+            'title'=> $request->title,
+            'type'=> $request->type,
+            'certification'=> $request->certification,
+            'price'=> $request->price,
+            'property_size'=> $request->property_size,
+            'surface_size'=> $request->surface_size,
+            'location'=> $request->location,
+            'description'=> $request->description,
+            'is_sold'=> 0,
+            'is_archive'=> 0
+        ]);
+        // dd($request->all());
+
+        return redirect()->route('property.index');
     }
 
     /**
@@ -64,5 +84,15 @@ class PropertyController extends Controller
     public function destroy(Property $property)
     {
         //
+    }
+
+    public function archive($id)
+    {
+        $property = Property::find($id);
+        $property->update([
+            'is_archive' => 1,
+        ]);
+        
+        return redirect()->route('property.index');
     }
 }
