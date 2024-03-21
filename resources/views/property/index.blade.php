@@ -39,7 +39,7 @@
                             <div class="flex mb-3 justify-between sm:max-w-full">
                                 <div class="flex">
                                     <button type="button"
-                                        onclick="window.location.href = '{{ route('property.add') }}'"
+                                        onclick="window.location.href = '{{ route('property.create') }}'"
                                         class="text-gray-100 bg-[#28808C] hover:bg-[#3D889B]  border border-gray-200 focus:ring-4 focus:outline-none focus:ring-gray-100 font-medium rounded-lg text-sm px-5 py-2 text-center inline-flex items-center dark:focus:ring-gray-600 dark:bg-gray-800 dark:border-gray-700 dark:text-white dark:hover:bg-gray-700 me-6">
                                         <svg xmlns="http://www.w3.org/2000/svg" class="pr-2" width=24 height=24
                                             viewBox="0 0 448 512"><!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
@@ -294,7 +294,8 @@
                                                                 </div>
                                                             </div>
                                                         </div>
-                                                        <a href="">
+                                                        <a
+                                                            href="{{ route('property.archive', ['id' => $property->id]) }}">
                                                             <svg width="26" height="26" viewBox="0 0 33 33"
                                                                 fill="none" xmlns="http://www.w3.org/2000/svg">
                                                                 <path d="M28.875 11V28.875H4.125V11" stroke="black"
@@ -307,7 +308,6 @@
                                                                     stroke-width="2" stroke-linecap="round"
                                                                     stroke-linejoin="round" />
                                                             </svg>
-
                                                         </a>
                                                         <a href="">
                                                             <svg width="30" height="26" viewBox="0 0 35 35"
