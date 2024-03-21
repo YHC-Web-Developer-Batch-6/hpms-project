@@ -97,7 +97,7 @@ class PropertyController extends Controller
      */
     public function update(Request $request, Property $property)
     {
-        //
+        return view ('property.update');
     }
 
     /**

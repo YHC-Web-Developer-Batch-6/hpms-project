@@ -188,8 +188,7 @@
                                                                                                 class="text-sm text-black text-start">
                                                                                                 DP</p>
                                                                                         </div>
-                                                                                        <div
-                                                                                            class="block mt-10 ml-8">
+                                                                                        <div class="block mt-10 ml-8">
                                                                                             <p> </p>
                                                                                             <p>:</p>
                                                                                             <p>:</p>
@@ -199,8 +198,7 @@
                                                                                             <p>:</p>
                                                                                             <p>:</p>
                                                                                         </div>
-                                                                                        <div
-                                                                                            class="block mt-10 ml-4">
+                                                                                        <div class="block mt-10 ml-4">
                                                                                             <p></p>
                                                                                             <p
                                                                                                 class="text-sm text-black text-start">
@@ -365,8 +363,7 @@
                                                                     <!-- Tombol Tutup Pop-up -->
                                                                     <div
                                                                         class="bg-gray-50 px-4 py-3 sm:px-6 sm:flex sm:flex-row-reverse border-t border-[#28808C]">
-                                                                        <button @click="isOpen = false"
-                                                                            type="button"
+                                                                        <button @click="isOpen = false" type="button"
                                                                             class="w-full inline-flex justify-center rounded-md border border-transparent shadow-sm px-4 py-2 bg-[#3f9aa7] text-base font-medium text-white hover:bg-[#65adb8] focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#65adb8] sm:ml-3 sm:w-auto sm:text-sm">
                                                                             Tutup
                                                                         </button>
@@ -394,8 +391,8 @@
                                                         <svg width="30" height="26" viewBox="0 0 35 35"
                                                             fill="none" xmlns="http://www.w3.org/2000/svg">
                                                             <mask id="mask0_15_2159" style="mask-type:luminance"
-                                                                maskUnits="userSpaceOnUse" x="0" y="0"
-                                                                width="30" height="30">
+                                                                maskUnits="userSpaceOnUse" x="0" y="0" width="30"
+                                                                height="30">
                                                                 <path d="M35 0H0V35H35V0Z" fill="white" />
                                                             </mask>
                                                             <g mask="url(#mask0_15_2159)">
@@ -689,7 +686,7 @@
                                                                     stroke-linejoin="round" />
                                                             </svg>
                                                         </a>
-                                                        <a href="">
+                                                        <a href="{{ route('property.update') }}">
                                                             <svg width="30" height="26" viewBox="0 0 35 35"
                                                                 fill="none" xmlns="http://www.w3.org/2000/svg">
                                                                 <mask id="mask0_15_2159" style="mask-type:luminance"
