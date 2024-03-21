@@ -159,13 +159,13 @@
                                                                                     <div
                                                                                         class="md:flex md:justify-between block my-10 ">
                                                                                         <div class="flex">
-                                                                                            <div class="block">
+                                                                                            <div class="block mb-4">
                                                                                                 <p
                                                                                                     class="text-xl font-bold text-start text-[#0F4E57]">
                                                                                                     Umum
                                                                                                 </p>
                                                                                                 <p
-                                                                                                    class="text-sm text-black text-start">
+                                                                                                    class="text-sm text-black text-start  mt-3">
                                                                                                     Tipe
                                                                                                 </p>
                                                                                                 <p
@@ -190,7 +190,7 @@
                                                                                                     DP</p>
                                                                                             </div>
                                                                                             <div
-                                                                                                class="block mt-7 ml-8">
+                                                                                                class="block mt-10 ml-8">
                                                                                                 <p> </p>
                                                                                                 <p>:</p>
                                                                                                 <p>:</p>
@@ -201,7 +201,7 @@
                                                                                                 <p>:</p>
                                                                                             </div>
                                                                                             <div
-                                                                                                class="block mt-7 ml-4">
+                                                                                                class="block mt-10 ml-4">
                                                                                                 <p></p>
                                                                                                 <p
                                                                                                     class="text-sm text-black text-start">
@@ -294,11 +294,11 @@
                                                                                         </div>
                                                                                         <div class="block justify-end">
                                                                                             <p
-                                                                                                class="text-xl font-bold text-[#0F4E57]">
+                                                                                                class="text-xl font-bold text-[#0F4E57] text-start">
                                                                                                 Metode Pembayaran
                                                                                             </p>
                                                                                             <ul
-                                                                                                class="text-sm text-black mt-4 list-disc ml-4">
+                                                                                                class="text-sm text-black mt-3 list-disc ml-4">
                                                                                                 <li class="text-start">
                                                                                                     Payment Full
                                                                                                 </li>
@@ -322,7 +322,7 @@
                                                                                             class="text-xl font-bold text-black">
                                                                                             Deskripsi</p>
                                                                                         <p
-                                                                                            class="text-sm font-normal my-4 text-wrap">
+                                                                                            class="text-sm font-normal my-4 text-wrap text-black">
                                                                                             "Lorem ipsum
                                                                                             dolor sit amet,
                                                                                             consectetur adipisicing
