@@ -111,7 +111,42 @@ class PropertyController extends Controller
      */
     public function update(Request $request, Property $property)
     {
-        //
+        try {
+            DB::beginTransaction();
+            $property->update([
+                'title'=> $request->title,
+                'type'=> $request->type,
+                'certification'=> $request->certification,
+                'price'=> $request->price,
+                'property_size'=> $request->property_size . 'm²',
+                'surface_size'=> $request->surface_size . 'm²',
+                'location'=> $request->location,
+                'description'=> $request->description,
+            ]);
+            
+            InstallmentItem::where('property_id', $property->id)->delete();
+            
+            foreach ($request->installments as $installment) {
+                $price = $property->price;
+                $dp = $request->down_payment;
+    
+                $plafon = $price - $dp;
+                $cicilan = ($plafon + ($plafon * 10 / 100)) / intval($installment);
+    
+                InstallmentItem::create([
+                    'property_id' => $property->id,
+                    'name' => 'Cicilan ' . $installment . ' bulan',
+                    'price' => intval($cicilan),
+                    'down_payment' => $request->down_payment,
+                ]);
+            }
+            DB::commit();
+        } catch (\Throwable $th) {
+            DB::rollBack();
+            throw $th;
+        }
+        
+        return redirect()->route('property.index');
     }
 
     /**

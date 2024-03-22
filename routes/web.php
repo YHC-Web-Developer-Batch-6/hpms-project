@@ -35,6 +35,7 @@ Route::middleware(['auth', 'verified', 'role:admin'])->group(function () {
     Route::get('/property/create', [PropertyController::class, 'create'])->name('property.create');
     Route::post('/property/store', [PropertyController::class, 'store'])->name('property.store');
     Route::get('/property/edit/{property}', [PropertyController::class, 'edit'])->name('property.edit');
+    Route::post('/property/update/{property}', [PropertyController::class, 'update'])->name('property.update');
     Route::get('/property/archive/{id}', [PropertyController::class, 'archive'])->name('property.archive');
     Route::get('/finance', [FinanceController::class, 'index'])->name('finance.index');
     Route::get('/finance/show', [FinanceController::class, 'show'])->name('finance.show');

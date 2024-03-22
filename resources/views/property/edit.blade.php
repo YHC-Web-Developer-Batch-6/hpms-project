@@ -6,7 +6,7 @@
         </div>
         <div class="card bg-white p-4 shadow-lg">
             <h1 class="font-medium text-2xl mb-3">Umum</h1>
-            <form action="{{ route('property.store') }} " method="POST">
+            <form action="{{ route('property.update', ['property' => $property->id]) }}" method="POST">
                 @csrf
                 <div class="grid md:grid-cols-2 gap-2 max-w-full mb-3">
                     {{-- left --}}
@@ -149,32 +149,32 @@
                                 Pembayaran</label>
                             <div class="mt-2">
                                 <div class="flex items-center gap-x-3">
-                                    <input id="cicilan-12-Bulan" name="installments[]" type="checkbox"
-                                        {{ in_array('Cicilan 12 bulan', $installmentItems) ? 'checked' : '' }}
+                                    <input id="cicilan-12-Bulan" name="installments[]" type="checkbox" value="12"
+                                        {{ in_array('Cicilan 12 bulan', $installmentNames) ? 'checked' : '' }}
                                         class="h-4 w-4 border-gray-300 text-indigo-600 focus:ring-[#0F4E57] checked:bg-[#0F4E57]">
                                     <label for="cicilan-12-Bulan"
                                         class="block text-sm font-medium leading-6 text-gray-900">Cicilan 12
                                         Bulan</label>
                                 </div>
                                 <div class="flex items-center gap-x-3">
-                                    <input id="cicilan-24-bulan" name="installments[]" type="checkbox"
-                                        {{ in_array('Cicilan 24 bulan', $installmentItems) ? 'checked' : '' }}
+                                    <input id="cicilan-24-bulan" name="installments[]" type="checkbox" value="24"
+                                        {{ in_array('Cicilan 24 bulan', $installmentNames) ? 'checked' : '' }}
                                         class="h-4 w-4 border-gray-300 text-indigo-600 focus:ring-[#0F4E57] checked:bg-[#0F4E57]">
                                     <label for="cicilan-24-bulan"
                                         class="block text-sm font-medium leading-6 text-gray-900">Cicilan 24
                                         Bulan</label>
                                 </div>
                                 <div class="flex items-center gap-x-3">
-                                    <input id="cicilan-48-bulan" name="installments[]" type="checkbox"
-                                        {{ in_array('Cicilan 48 bulan', $installmentItems) ? 'checked' : '' }}
+                                    <input id="cicilan-48-bulan" name="installments[]" type="checkbox" value="48"
+                                        {{ in_array('Cicilan 48 bulan', $installmentNames) ? 'checked' : '' }}
                                         class="h-4 w-4 border-gray-300 text-indigo-600 focus:ring-[#0F4E57] checked:bg-[#0F4E57]">
                                     <label for="cicilan-48-bulan"
                                         class="block text-sm font-medium leading-6 text-gray-900">Cicilan 48
                                         Bulan</label>
                                 </div>
                                 <div class="flex items-center gap-x-3">
-                                    <input id="cicilan-60-bulan" name="installments[]" type="checkbox"
-                                        {{ in_array('Cicilan 60 bulan', $installmentItems) ? 'checked' : '' }}
+                                    <input id="cicilan-60-bulan" name="installments[]" type="checkbox" value="60"
+                                        {{ in_array('Cicilan 60 bulan', $installmentNames) ? 'checked' : '' }}
                                         class="h-4 w-4 border-gray-300 text-indigo-600 focus:ring-[#0F4E57] checked:bg-[#0F4E57]">
                                     <label for="cicilan-60-bulan"
                                         class="block text-sm font-medium leading-6 text-gray-900">Cicilan 60
