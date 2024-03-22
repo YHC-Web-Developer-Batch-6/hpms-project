@@ -323,7 +323,7 @@
                                                                 stroke-linejoin="round" />
                                                         </svg>
                                                     </a>
-                                                    <a href="">
+                                                    <a href="{{ route('property.edit',['property'=>$property->id]) }}">
                                                         <svg width="30" height="26" viewBox="0 0 35 35"
                                                             fill="none" xmlns="http://www.w3.org/2000/svg">
                                                             <mask id="mask0_15_2159" style="mask-type:luminance"
@@ -621,7 +621,7 @@
                                                                     stroke-linejoin="round" />
                                                             </svg>
                                                         </a>
-                                                        <a href="{{ route('property.update') }}">
+                                                        <a href="{{ route('property.edit',['property'=>$property->id]) }}">
                                                             <svg width="30" height="26" viewBox="0 0 35 35"
                                                                 fill="none" xmlns="http://www.w3.org/2000/svg">
                                                                 <mask id="mask0_15_2159" style="mask-type:luminance"

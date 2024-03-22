@@ -2,7 +2,7 @@
 
     <div class="p-4 sm:ml-64">
         <div class="pb-4">
-            <p class="text-3xl font-bold text-black">Form Property</p>
+            <p class="text-3xl font-bold text-black">Form Ubah Property</p>
         </div>
         <div class="card bg-white p-4 shadow-lg">
             <h1 class="font-medium text-2xl mb-3">Umum</h1>
@@ -18,7 +18,7 @@
                                 <div
                                     class="flex rounded-md shadow-sm ring-1 ring-inset ring-gray-300 focus-within:ring-2 focus-within:ring-inset focus-within:ring-[#0F4E57] sm:max-w-full">
 
-                                    <input type="text" name="title" id="judul"
+                                    <input type="text" name="title" id="judul" value="{{ $property->title }}"
                                         class="block flex-1 border-0 bg-transparent py-1.5 pl-1 text-gray-900 placeholder:text-gray-400 focus:ring-0 sm:text-sm sm:leading-6">
                                 </div>
                             </div>
@@ -30,11 +30,11 @@
                                     class="flex rounded-md shadow-sm ring-1 ring-inset ring-gray-300 focus-within:ring-2 focus-within:ring-inset focus-within:ring-[#0F4E57] sm:max-w-full">
                                     <select id="type" name="type"
                                         class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-[#0F4E57] focus:border-[#0F4E57] block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
-                                        <option selected>Pilih Tipe</option>
-                                        <option value="rumah">Rumah</option>
-                                        <option value="Tanah">Tanah</option>
-                                        <option value="Ruko">Ruko</option>
-                                        <option value="Gedung">Gedung</option>
+                                        <option disabled>Pilih Tipe</option>
+                                        <option value="Rumah" {{ ($property->type == 'Rumah') ? 'selected' : '' }}>Rumah</option>
+                                        <option value="Tanah" {{ ($property->type == 'Tanah') ? 'selected' : '' }}>Tanah</option>
+                                        <option value="Ruko" {{ ($property->type == 'Ruko') ? 'selected' : '' }}>Ruko</option>
+                                        <option value="Gedung" {{ ($property->type == 'Gedung') ? 'selected' : '' }}>Gedung</option>
                                     </select>
                                 </div>
                             </div>
@@ -46,7 +46,7 @@
                                 <div
                                     class="flex rounded-md shadow-sm ring-1 ring-inset ring-gray-300 focus-within:ring-2 focus-within:ring-inset focus-within:ring-[#0F4E57] sm:max-w-full">
 
-                                    <input type="number" name="property_size" id="property_size"
+                                    <input type="number" name="property_size" id="property_size" value="{{ intval($property->property_size) }}" min="1"
                                         class="block flex-1 border-0 bg-transparent py-1.5 pl-1 text-gray-900 placeholder:text-gray-400 focus:ring-0 sm:text-sm sm:leading-6">
                                 </div>
                             </div>
@@ -58,7 +58,7 @@
                                 <div
                                     class="flex rounded-md shadow-sm ring-1 ring-inset ring-gray-300 focus-within:ring-2 focus-within:ring-inset focus-within:ring-[#0F4E57] sm:max-w-full">
 
-                                    <input type="number" name="surface_size" id="surface_size"
+                                    <input type="number" name="surface_size" id="surface_size" value="{{ intval($property->surface_size) }}" min="1"
                                         class="block flex-1 border-0 bg-transparent py-1.5 pl-1 text-gray-900 placeholder:text-gray-400 focus:ring-0 sm:text-sm sm:leading-6">
                                 </div>
                             </div>
@@ -73,7 +73,7 @@
                                 <div
                                     class="flex rounded-md shadow-sm ring-1 ring-inset ring-gray-300 focus-within:ring-2 focus-within:ring-inset focus-within:ring-[#0F4E57] sm:max-w-full">
 
-                                    <input type="text" name="certification" id="certification"
+                                    <input type="text" name="certification" id="certification" value="{{ $property->certification }}"
                                         class="block flex-1 border-0 bg-transparent py-1.5 pl-1 text-gray-900 placeholder:text-gray-400 focus:ring-0 sm:text-sm sm:leading-6">
                                 </div>
                             </div>
@@ -86,7 +86,7 @@
                                     class="flex rounded-md shadow-sm ring-1 ring-inset ring-gray-300 focus-within:ring-2 focus-within:ring-inset focus-within:ring-[#0F4E57] sm:max-w-full">
                                     <input
                                         class="block w-full text-sm text-gray-900 border border-gray-300 rounded-lg cursor-pointer bg-gray-50 dark:text-gray-400 focus:outline-none dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400"
-                                        aria-describedby="user_avatar_help" id="dokumentasi" type="file">
+                                        aria-describedby="user_avatar_help" id="dokumentasi" type="file" value="{{ $property->dokumentasi }}">
                                 </div>
                             </div>
                         </div>
@@ -97,7 +97,7 @@
                                 <div
                                     class="flex rounded-md shadow-sm ring-1 ring-inset ring-gray-300 focus-within:ring-2 focus-within:ring-inset focus-within:ring-[#0F4E57] sm:max-w-full">
 
-                                    <input type="text" name="location" id="location"
+                                    <input type="text" name="location" id="location" value="{{ $property->location }}"
                                         class="block flex-1 border-0 bg-transparent py-1.5 pl-1 text-gray-900 placeholder:text-gray-400 focus:ring-0 sm:text-sm sm:leading-6">
                                 </div>
                             </div>
@@ -110,7 +110,8 @@
                         class="block text-sm font-medium leading-6 text-gray-900">Descriptions</label>
                     <div class="mt-2">
                         <textarea id="description" name="description" rows="4"
-                            class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-[#0F4E57] sm:text-sm sm:leading-6"></textarea>
+                            class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-[#0F4E57] sm:text-sm sm:leading-6"
+                        >{{ $property->description }}</textarea>
                     </div>
                 </div>
                 {{-- detail Harga --}}
@@ -124,7 +125,7 @@
                                 <div
                                     class="flex rounded-md shadow-sm ring-1 ring-inset ring-gray-300 focus-within:ring-2 focus-within:ring-inset focus-within:ring-[#0F4E57] sm:max-w-full">
 
-                                    <input type="number" name="price" id="price"
+                                    <input type="number" name="price" id="price" min="1" value="{{ $property->price }}"
                                         class="block flex-1 border-0 bg-transparent py-1.5 pl-1 text-gray-900 placeholder:text-gray-400 focus:ring-0 sm:text-sm sm:leading-6">
                                 </div>
                             </div>
@@ -136,7 +137,7 @@
                                 <div
                                     class="flex rounded-md shadow-sm ring-1 ring-inset ring-gray-300 focus-within:ring-2 focus-within:ring-inset focus-within:ring-[#0F4E57] sm:max-w-full">
 
-                                    <input type="text" name="down_payment" id="down_payment"
+                                    <input type="number" name="down_payment" id="down_payment" min="1" value="{{ $downPayment }}"
                                         class="block flex-1 border-0 bg-transparent py-1.5 pl-1 text-gray-900 placeholder:text-gray-400 focus:ring-0 sm:text-sm sm:leading-6">
                                 </div>
                             </div>
@@ -148,15 +149,8 @@
                                 Pembayaran</label>
                             <div class="mt-2">
                                 <div class="flex items-center gap-x-3">
-                                    <input id="full-payment" name="installments[]" type="checkbox"
-                                        value="full_payment"
-                                        class="h-4 w-4 border-gray-300 text-indigo-600 focus:ring-[#0F4E57] checked:bg-[#0F4E57]">
-                                    <label for="full-payment"
-                                        class="block text-sm font-medium leading-6 text-gray-900">Full Payment</label>
-                                </div>
-                                <div class="flex items-center gap-x-3">
                                     <input id="cicilan-12-Bulan" name="installments[]" type="checkbox"
-                                        value="cicilan-12-bulan"
+                                        {{ in_array('Cicilan 12 bulan', $installmentItems) ? 'checked' : '' }}
                                         class="h-4 w-4 border-gray-300 text-indigo-600 focus:ring-[#0F4E57] checked:bg-[#0F4E57]">
                                     <label for="cicilan-12-Bulan"
                                         class="block text-sm font-medium leading-6 text-gray-900">Cicilan 12
@@ -164,7 +158,7 @@
                                 </div>
                                 <div class="flex items-center gap-x-3">
                                     <input id="cicilan-24-bulan" name="installments[]" type="checkbox"
-                                        value="cicilan-24-bulan"
+                                        {{ in_array('Cicilan 24 bulan', $installmentItems) ? 'checked' : '' }}
                                         class="h-4 w-4 border-gray-300 text-indigo-600 focus:ring-[#0F4E57] checked:bg-[#0F4E57]">
                                     <label for="cicilan-24-bulan"
                                         class="block text-sm font-medium leading-6 text-gray-900">Cicilan 24
@@ -172,7 +166,7 @@
                                 </div>
                                 <div class="flex items-center gap-x-3">
                                     <input id="cicilan-48-bulan" name="installments[]" type="checkbox"
-                                        value="cicilan-48-bulan"
+                                        {{ in_array('Cicilan 48 bulan', $installmentItems) ? 'checked' : '' }}
                                         class="h-4 w-4 border-gray-300 text-indigo-600 focus:ring-[#0F4E57] checked:bg-[#0F4E57]">
                                     <label for="cicilan-48-bulan"
                                         class="block text-sm font-medium leading-6 text-gray-900">Cicilan 48
@@ -180,7 +174,7 @@
                                 </div>
                                 <div class="flex items-center gap-x-3">
                                     <input id="cicilan-60-bulan" name="installments[]" type="checkbox"
-                                        value="cicilan-60-bulan"
+                                        {{ in_array('Cicilan 60 bulan', $installmentItems) ? 'checked' : '' }}
                                         class="h-4 w-4 border-gray-300 text-indigo-600 focus:ring-[#0F4E57] checked:bg-[#0F4E57]">
                                     <label for="cicilan-60-bulan"
                                         class="block text-sm font-medium leading-6 text-gray-900">Cicilan 60

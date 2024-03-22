@@ -2,9 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\InstallmentItem;
 use App\Models\Property;
 use Illuminate\Http\Request;
+use App\Models\InstallmentItem;
+use Illuminate\Support\Facades\DB;
 
 class PropertyController extends Controller
 {
@@ -13,13 +14,16 @@ class PropertyController extends Controller
      */
     public function index()
     {
-        $propertiesArchive = Property::where('is_archive', 1)->get();
-        $propertiesUnarchive = Property::where('is_archive', 0)->get();
+        $propertiesArchive = Property::where('is_archive', 1);
+        $propertiesUnarchive = Property::where('is_archive', 0);
 
         if (request()->get('sold') !== null) {
-            $propertiesArchive = Property::where('is_archive', 1)->where('is_sold', request('sold'))->get();
-            $propertiesUnarchive = Property::where('is_archive', 0)->where('is_sold', request('sold'))->get();
+            $propertiesArchive = Property::where('is_archive', 1)->where('is_sold', request('sold'));
+            $propertiesUnarchive = Property::where('is_archive', 0)->where('is_sold', request('sold'));
         }
+
+        $propertiesArchive = $propertiesArchive->orderByDesc('created_at')->get();
+        $propertiesUnarchive = $propertiesUnarchive->orderByDesc('created_at')->get();
 
         return view('property.index', [
             'propertiesArchive' => $propertiesArchive,
@@ -40,38 +44,41 @@ class PropertyController extends Controller
      */
     public function store(Request $request)
     {
-        $property = Property::create([
-            'user_id' => auth()->user()->id,
-            'title'=> $request->title,
-            'type'=> $request->type,
-            'certification'=> $request->certification,
-            'price'=> $request->price,
-            'property_size'=> $request->property_size,
-            'surface_size'=> $request->surface_size,
-            'location'=> $request->location,
-            'description'=> $request->description,
-            'is_sold'=> 0,
-            'is_archive'=> 0
-        ]);
-
-        foreach ($request->installments as $installment) {
-            $price=$property->price;
-            $dp = $request->down_payment;
-
-            $pinjaman_pokok = $price - $dp;
-
-            $cicilan = ($pinjaman_pokok + ($pinjaman_pokok * 10 /100)) / intval($installment);
-          
-
-
-            InstallmentItem::create([
-                'property_id' => $property->id,
-                'name' => $installment,
-                'price' => intval($cicilan),
-                'down_payment' => $request->down_payment,
+        try {
+            DB::beginTransaction();
+            $property = Property::create([
+                'user_id' => auth()->user()->id,
+                'title'=> $request->title,
+                'type'=> $request->type,
+                'certification'=> $request->certification,
+                'price'=> $request->price,
+                'property_size'=> $request->property_size . 'm²',
+                'surface_size'=> $request->surface_size . 'm²',
+                'location'=> $request->location,
+                'description'=> $request->description,
+                'is_sold'=> 0,
+                'is_archive'=> 0
             ]);
+    
+            foreach ($request->installments as $installment) {
+                $price = $property->price;
+                $dp = $request->down_payment;
+    
+                $plafon = $price - $dp;
+                $cicilan = ($plafon + ($plafon * 10 / 100)) / intval($installment);
+    
+                InstallmentItem::create([
+                    'property_id' => $property->id,
+                    'name' => 'Cicilan ' . $installment . ' bulan',
+                    'price' => intval($cicilan),
+                    'down_payment' => $request->down_payment,
+                ]);
+            }
+            DB::commit();
+        } catch (\Throwable $th) {
+            DB::rollBack();
+            throw $th;
         }
-       
 
         return redirect()->route('property.index');
     }
@@ -89,7 +96,14 @@ class PropertyController extends Controller
      */
     public function edit(Property $property)
     {
-        //
+        $installmentItems = InstallmentItem::where('property_id', $property->id)->get();
+
+        return view ('property.edit', [
+                'property' => $property,
+                'installmentNames' => $installmentItems->pluck('name')->toArray(),
+                'downPayment' => $installmentItems->pluck('down_payment')->first(),
+            ]
+        );
     }
 
     /**
@@ -97,7 +111,7 @@ class PropertyController extends Controller
      */
     public function update(Request $request, Property $property)
     {
-        return view ('property.update');
+        //
     }
 
     /**
