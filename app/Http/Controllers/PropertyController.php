@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\InstallmentItem;
 use App\Models\Property;
 use Illuminate\Http\Request;
 
@@ -52,7 +53,25 @@ class PropertyController extends Controller
             'is_sold'=> 0,
             'is_archive'=> 0
         ]);
-        // dd($request->all());
+
+        foreach ($request->installments as $installment) {
+            $price=$property->price;
+            $dp = $request->down_payment;
+
+            $pinjaman_pokok = $price - $dp;
+
+            $cicilan = ($pinjaman_pokok + ($pinjaman_pokok * 10 /100)) / intval($installment);
+          
+
+
+            InstallmentItem::create([
+                'property_id' => $property->id,
+                'name' => $installment,
+                'price' => intval($cicilan),
+                'down_payment' => $request->down_payment,
+            ]);
+        }
+       
 
         return redirect()->route('property.index');
     }

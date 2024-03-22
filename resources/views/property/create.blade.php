@@ -144,19 +144,13 @@
                     </div>
                     <div class="max-w-full">
                         <div class="max-w-full mb-2">
-                            <label class="block text-sm font-medium leading-6 text-gray-900">Metode
-                                Pembayaran</label>
+                            <label class="block text-sm font-medium leading-6 text-gray-900">
+                                Pilihan Cicilan
+                            </label>
                             <div class="mt-2">
                                 <div class="flex items-center gap-x-3">
-                                    <input id="full-payment" name="installments[]" type="checkbox"
-                                        value="full_payment"
-                                        class="h-4 w-4 border-gray-300 text-indigo-600 focus:ring-[#0F4E57] checked:bg-[#0F4E57]">
-                                    <label for="full-payment"
-                                        class="block text-sm font-medium leading-6 text-gray-900">Full Payment</label>
-                                </div>
-                                <div class="flex items-center gap-x-3">
                                     <input id="cicilan-12-Bulan" name="installments[]" type="checkbox"
-                                        value="cicilan-12-bulan"
+                                        value="12"
                                         class="h-4 w-4 border-gray-300 text-indigo-600 focus:ring-[#0F4E57] checked:bg-[#0F4E57]">
                                     <label for="cicilan-12-Bulan"
                                         class="block text-sm font-medium leading-6 text-gray-900">Cicilan 12
@@ -164,7 +158,7 @@
                                 </div>
                                 <div class="flex items-center gap-x-3">
                                     <input id="cicilan-24-bulan" name="installments[]" type="checkbox"
-                                        value="cicilan-24-bulan"
+                                        value="24"
                                         class="h-4 w-4 border-gray-300 text-indigo-600 focus:ring-[#0F4E57] checked:bg-[#0F4E57]">
                                     <label for="cicilan-24-bulan"
                                         class="block text-sm font-medium leading-6 text-gray-900">Cicilan 24
@@ -172,7 +166,7 @@
                                 </div>
                                 <div class="flex items-center gap-x-3">
                                     <input id="cicilan-48-bulan" name="installments[]" type="checkbox"
-                                        value="cicilan-48-bulan"
+                                        value="48"
                                         class="h-4 w-4 border-gray-300 text-indigo-600 focus:ring-[#0F4E57] checked:bg-[#0F4E57]">
                                     <label for="cicilan-48-bulan"
                                         class="block text-sm font-medium leading-6 text-gray-900">Cicilan 48
@@ -180,7 +174,7 @@
                                 </div>
                                 <div class="flex items-center gap-x-3">
                                     <input id="cicilan-60-bulan" name="installments[]" type="checkbox"
-                                        value="cicilan-60-bulan"
+                                        value="60"
                                         class="h-4 w-4 border-gray-300 text-indigo-600 focus:ring-[#0F4E57] checked:bg-[#0F4E57]">
                                     <label for="cicilan-60-bulan"
                                         class="block text-sm font-medium leading-6 text-gray-900">Cicilan 60
