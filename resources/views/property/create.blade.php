@@ -6,7 +6,7 @@
         </div>
         <div class="card bg-white p-4 shadow-lg">
             <h1 class="font-medium text-2xl mb-3">Umum</h1>
-            <form action="{{ route('property.store') }} " method="POST">
+            <form action="{{ route('property.store') }} " method="POST" enctype="multipart/form-data">
                 @csrf
                 <div class="grid md:grid-cols-2 gap-2 max-w-full mb-3">
                     {{-- left --}}
@@ -86,7 +86,7 @@
                                     class="flex rounded-md shadow-sm ring-1 ring-inset ring-gray-300 focus-within:ring-2 focus-within:ring-inset focus-within:ring-[#0F4E57] sm:max-w-full">
                                     <input
                                         class="block w-full text-sm text-gray-900 border border-gray-300 rounded-lg cursor-pointer bg-gray-50 dark:text-gray-400 focus:outline-none dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400"
-                                        aria-describedby="user_avatar_help" id="dokumentasi" type="file">
+                                        aria-describedby="user_avatar_help" id="dokumentasi" name="medias[]" type="file" multiple>
                                 </div>
                             </div>
                         </div>

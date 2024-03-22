@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Property;
+use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 use App\Models\InstallmentItem;
 use Illuminate\Support\Facades\DB;
@@ -59,7 +60,18 @@ class PropertyController extends Controller
                 'is_sold'=> 0,
                 'is_archive'=> 0
             ]);
-    
+
+            if ($request->hasFile('medias')) {
+                foreach ($request->medias as $media) {
+                    if ($media->isValid()) {
+                        $newFileName = Str::random(8) . $media->extension();
+                        $property->addMediaFromRequest('medias')
+                            ->usingFileName($newFileName)
+                            ->toMediaCollection('property');
+                    }
+                }
+            }
+
             foreach ($request->installments as $installment) {
                 $price = $property->price;
                 $dp = $request->down_payment;
@@ -145,7 +157,7 @@ class PropertyController extends Controller
             DB::rollBack();
             throw $th;
         }
-        
+
         return redirect()->route('property.index');
     }
 
