@@ -16,7 +16,7 @@
                     <div class="mb-4  border-gray-700">
                         <ul class="flex flex-wrap -mb-px text-sm font-medium text-center" id="default-styled-tab"
                             data-tabs-toggle="#default-styled-tab-content"
-                            data-tabs-active-classes="text-[#3D889B] hover:text-[#7CB6C5] border-[#0F4E57]"
+                            data-tabs-active-classes="text-[#3D889B] dark:text-[#3D889B] hover:text-[#7CB6C5] dark:hover:text-[#7CB6C5] border-[#0F4E57] dark:border-[#0F4E57]"
                             data-tabs-inactive-classes="border-transparent text-gray-500 hover:text-gray-600 text-gray-400 border-gray-100 hover:border-gray-300 border-gray-700 hover:text-gray-300"
                             role="tablist">
                             <li class="me-2" role="presentation">
@@ -77,7 +77,7 @@
                                     </thead>
                                     <tbody>
                                         @foreach ($propertiesUnarchive as $index => $property)
-                                            <tr class="border-b odd:bg-white even:bg-gray-50 ">
+                                            <tr class="border-b drak:odd:bg-white drak:even:bg-gray-50 ">
                                                 <th scope="row"
                                                     class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap">
                                                     {{ ++$index }}
@@ -310,20 +310,16 @@
                                                     </div>
                                                     <a
                                                         href="{{ route('property.archive', ['id' => $property->id]) }}">
-                                                        <svg width="26" height="26" viewBox="0 0 33 33"
+                                                        <svg width="26" height="26" viewBox="0 0 37 37"
                                                             fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                            <path d="M28.875 11V28.875H4.125V11" stroke="black"
-                                                                stroke-width="2" stroke-linecap="round"
-                                                                stroke-linejoin="round" />
-                                                            <path d="M31.625 4.125H1.375V11H31.625V4.125Z"
-                                                                stroke="black" stroke-width="2"
-                                                                stroke-linecap="round" stroke-linejoin="round" />
-                                                            <path d="M13.75 16.5H19.25" stroke="black"
-                                                                stroke-width="2" stroke-linecap="round"
-                                                                stroke-linejoin="round" />
+                                                            <path
+                                                                d="M18.5 27.75L24.6667 21.5833L22.5083 19.425L20.0417 21.8917V15.4167H16.9583V21.8917L14.4917 19.425L12.3333 21.5833L18.5 27.75ZM7.70833 12.3333V29.2917H29.2917V12.3333H7.70833ZM7.70833 32.375C6.86042 32.375 6.13455 32.0731 5.53073 31.4693C4.92691 30.8655 4.625 30.1396 4.625 29.2917V10.0594C4.625 9.69965 4.68281 9.35278 4.79844 9.01875C4.91406 8.68472 5.0875 8.37639 5.31875 8.09375L7.24583 5.74271C7.52847 5.38299 7.88177 5.10677 8.30573 4.91406C8.72969 4.72135 9.17292 4.625 9.63542 4.625H27.3646C27.8271 4.625 28.2703 4.72135 28.6943 4.91406C29.1182 5.10677 29.4715 5.38299 29.7542 5.74271L31.6812 8.09375C31.9125 8.37639 32.0859 8.68472 32.2016 9.01875C32.3172 9.35278 32.375 9.69965 32.375 10.0594V29.2917C32.375 30.1396 32.0731 30.8655 31.4693 31.4693C30.8655 32.0731 30.1396 32.375 29.2917 32.375H7.70833ZM8.325 9.25H28.675L27.3646 7.70833H9.63542L8.325 9.25Z"
+                                                                fill="black" />
                                                         </svg>
+
                                                     </a>
-                                                    <a href="{{ route('property.edit',['property'=>$property->id]) }}">
+                                                    <a
+                                                        href="{{ route('property.edit', ['property' => $property->id]) }}">
                                                         <svg width="30" height="26" viewBox="0 0 35 35"
                                                             fill="none" xmlns="http://www.w3.org/2000/svg">
                                                             <mask id="mask0_15_2159" style="mask-type:luminance"
@@ -608,20 +604,17 @@
                                                         </div>
                                                         <a
                                                             href="{{ route('property.archive', ['id' => $property->id]) }}">
-                                                            <svg width="26" height="26" viewBox="0 0 33 33"
+                                                            <svg width="37" height="37" viewBox="0 0 37 37"
                                                                 fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                                <path d="M28.875 11V28.875H4.125V11" stroke="black"
-                                                                    stroke-width="2" stroke-linecap="round"
-                                                                    stroke-linejoin="round" />
-                                                                <path d="M31.625 4.125H1.375V11H31.625V4.125Z"
-                                                                    stroke="black" stroke-width="2"
-                                                                    stroke-linecap="round" stroke-linejoin="round" />
-                                                                <path d="M13.75 16.5H19.25" stroke="black"
-                                                                    stroke-width="2" stroke-linecap="round"
-                                                                    stroke-linejoin="round" />
+                                                                <path
+                                                                    d="M18.5 27.75L24.6667 21.5833L22.5083 19.425L20.0417 21.8917V15.4167H16.9583V21.8917L14.4917 19.425L12.3333 21.5833L18.5 27.75ZM7.70833 12.3333V29.2917H29.2917V12.3333H7.70833ZM7.70833 32.375C6.86042 32.375 6.13455 32.0731 5.53073 31.4693C4.92691 30.8655 4.625 30.1396 4.625 29.2917V10.0594C4.625 9.69965 4.68281 9.35278 4.79844 9.01875C4.91406 8.68472 5.0875 8.37639 5.31875 8.09375L7.24583 5.74271C7.52847 5.38299 7.88177 5.10677 8.30573 4.91406C8.72969 4.72135 9.17292 4.625 9.63542 4.625H27.3646C27.8271 4.625 28.2703 4.72135 28.6943 4.91406C29.1182 5.10677 29.4715 5.38299 29.7542 5.74271L31.6812 8.09375C31.9125 8.37639 32.0859 8.68472 32.2016 9.01875C32.3172 9.35278 32.375 9.69965 32.375 10.0594V29.2917C32.375 30.1396 32.0731 30.8655 31.4693 31.4693C30.8655 32.0731 30.1396 32.375 29.2917 32.375H7.70833ZM8.325 9.25H28.675L27.3646 7.70833H9.63542L8.325 9.25Z"
+                                                                    fill="black" />
                                                             </svg>
+
+
                                                         </a>
-                                                        <a href="{{ route('property.edit',['property'=>$property->id]) }}">
+                                                        <a
+                                                            href="{{ route('property.edit', ['property' => $property->id]) }}">
                                                             <svg width="30" height="26" viewBox="0 0 35 35"
                                                                 fill="none" xmlns="http://www.w3.org/2000/svg">
                                                                 <mask id="mask0_15_2159" style="mask-type:luminance"
