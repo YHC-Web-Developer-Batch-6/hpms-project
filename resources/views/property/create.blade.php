@@ -45,7 +45,7 @@
                             <div class="mt-2">
                                 <div
                                     class="flex rounded-md shadow-sm ring-1 ring-inset ring-gray-300 focus-within:ring-2 focus-within:ring-inset focus-within:ring-[#0F4E57] sm:max-w-full">
-                                    <input type="number" name="property_size" id="property_size"
+                                    <input type="text" name="property_size" id="property_size" placeholder="Masukkan dalam ukuran m²"
                                         min="1"
                                         class="block flex-1 border-0 bg-transparent py-1.5 pl-1 text-gray-900 placeholder:text-gray-400 focus:ring-0 sm:text-sm sm:leading-6">
                                 </div>
@@ -57,7 +57,7 @@
                             <div class="mt-2">
                                 <div
                                     class="flex rounded-md shadow-sm ring-1 ring-inset ring-gray-300 focus-within:ring-2 focus-within:ring-inset focus-within:ring-[#0F4E57] sm:max-w-full">
-                                    <input type="number" name="surface_size" id="surface_size"
+                                    <input type="text" name="surface_size" id="surface_size" placeholder="Masukkan dalam ukuran m²"
                                         min="1"
                                         class="block flex-1 border-0 bg-transparent py-1.5 pl-1 text-gray-900 placeholder:text-gray-400 focus:ring-0 sm:text-sm sm:leading-6">
                                 </div>
@@ -123,7 +123,7 @@
                             <div class="mt-2">
                                 <div
                                     class="flex rounded-md shadow-sm ring-1 ring-inset ring-gray-300 focus-within:ring-2 focus-within:ring-inset focus-within:ring-[#0F4E57] sm:max-w-full">
-                                    <input type="number" name="price" id="price" min="1"
+                                    <input type="text" name="price" id="price" min="1"
                                         class="block flex-1 border-0 bg-transparent py-1.5 pl-1 text-gray-900 placeholder:text-gray-400 focus:ring-0 sm:text-sm sm:leading-6">
                                 </div>
                             </div>
@@ -134,7 +134,7 @@
                             <div class="mt-2">
                                 <div
                                     class="flex rounded-md shadow-sm ring-1 ring-inset ring-gray-300 focus-within:ring-2 focus-within:ring-inset focus-within:ring-[#0F4E57] sm:max-w-full">
-                                    <input type="number" name="down_payment" id="down_payment" min="1"
+                                    <input type="text" name="down_payment" id="down_payment" min="1"
                                         class="block flex-1 border-0 bg-transparent py-1.5 pl-1 text-gray-900 placeholder:text-gray-400 focus:ring-0 sm:text-sm sm:leading-6">
                                 </div>
                             </div>
