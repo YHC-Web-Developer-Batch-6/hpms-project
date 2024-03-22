@@ -16,7 +16,7 @@
                     <div class="mb-4  border-gray-700">
                         <ul class="flex flex-wrap -mb-px text-sm font-medium text-center" id="default-styled-tab"
                             data-tabs-toggle="#default-styled-tab-content"
-                            data-tabs-active-classes="text-[#3D889B] dark:text-[#3D889B] hover:text-[#7CB6C5] dark:hover:text-[#7CB6C5] border-[#0F4E57] dark:border-[#0F4E57]"
+                            data-tabs-active-classes="text-[#3D889B] hover:text-[#7CB6C5] border-[#0F4E57]"
                             data-tabs-inactive-classes="border-transparent text-gray-500 hover:text-gray-600 text-gray-400 border-gray-100 hover:border-gray-300 border-gray-700 hover:text-gray-300"
                             role="tablist">
                             <li class="me-2" role="presentation">
@@ -77,9 +77,9 @@
                                     </thead>
                                     <tbody>
                                         @foreach ($propertiesUnarchive as $index => $property)
-                                            <tr class=" border-b ">
+                                            <tr class="border-b odd:bg-white even:bg-gray-50 ">
                                                 <th scope="row"
-                                                    class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap ">
+                                                    class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap">
                                                     {{ ++$index }}
                                                 </th>
                                                 <td class="p-4">
@@ -227,67 +227,6 @@
                                                                                                 Rp.60.000.000
                                                                                             </p>
                                                                                         </div>
-                                                                                        {{-- <p
-                                                                                            class="text-xl font-bold text-[#0F4E57]">
-                                                                                            Umum
-                                                                                        </p>
-                                                                                        <p
-                                                                                            class="text-sm text-black mt-4">
-                                                                                            <span
-                                                                                                class="w-20 mr-20">Tipe</span><span
-                                                                                                class="ml-4">:</span><span
-                                                                                                class="ml-4">Rumah</span>
-                                                                                        </p>
-                                                                                        <p
-                                                                                            class="text-sm text-black mt-2">
-                                                                                            <span
-                                                                                                class="w-20 mr-3">Luas
-                                                                                                Bangunan</span><span
-                                                                                                class="ml-4">:</span><span
-                                                                                                class="ml-4">64</span>
-                                                                                        </p>
-                                                                                        <p
-                                                                                            class="text-sm text-black mt-2">
-                                                                                            <span
-                                                                                                class="w-20 mr-10">Luas
-                                                                                                Tanah</span><span
-                                                                                                class="ml-[15px]">:</span><span
-                                                                                                class="ml-4">166</span>
-                                                                                        </p>
-                                                                                        <p
-                                                                                            class="text-sm text-black mt-2">
-                                                                                            <span
-                                                                                                class="w-20 mr-12">Sertifikasi</span><span
-                                                                                                class="ml-4">:</span><span
-                                                                                                class="ml-4">SHM
-                                                                                                -
-                                                                                                Sertifikat Hak
-                                                                                                Milik</span>
-                                                                                        </p>
-                                                                                        <p
-                                                                                            class="text-sm text-black mt-2">
-                                                                                            <span
-                                                                                                class="w-20 mr-16">Lokasi</span>
-                                                                                            <span
-                                                                                                class="ml-4">:</span><span
-                                                                                                class="ml-4">Banjarmasin,
-                                                                                                Indonesia</span>
-                                                                                        </p>
-                                                                                        <p
-                                                                                            class="text-sm text-black mt-2">
-                                                                                            <span
-                                                                                                class="w-20 mr-[68px]">Harga</span><span
-                                                                                                class="ml-4">:</span><span
-                                                                                                class="ml-4">Rp.640.000.000</span>
-                                                                                        </p>
-                                                                                        <p
-                                                                                            class="text-sm text-black mt-2">
-                                                                                            <span
-                                                                                                class="w-20 mr-[86px]">DP</span><span
-                                                                                                class="ml-4">:</span><span
-                                                                                                class="ml-4">Rp.60.000.000</span>
-                                                                                        </p> --}}
-
                                                                                     </div>
                                                                                     <div class="block justify-end">
                                                                                         <p
@@ -353,10 +292,7 @@
                                                                                         est
                                                                                         laborum."
                                                                                     </p>
-
                                                                                 </div>
-
-
                                                                             </div>
                                                                         </div>
                                                                     </div>
@@ -411,14 +347,14 @@
                         </div>
 
                         {{-- Table Arsip --}}
-                        <div class="hidden p-4 rounded-lg bg-white " id="styled-dashboard" role="tabpanel"
+                        <div class="hidden px-4 py-4 rounded-lg bg-white " id="styled-dashboard" role="tabpanel"
                             aria-labelledby="dashboard-tab">
                             @if ($propertiesArchive->count() > 0)
                                 <div class="flex mb-3 justify-between sm:max-w-full">
                                     <div class="flex">
                                         <button type="button"
                                             onclick="window.location.href = '{{ route('property.create') }}'"
-                                            class="text-gray-100 bg-[#28808C] hover:bg-[#3D889B]  border border-gray-200 focus:ring-4 focus:outline-none focus:ring-gray-100 font-medium rounded-lg text-sm px-5 py-2 text-center inline-flex items-center dark:focus:ring-gray-600 dark:bg-gray-800 dark:border-gray-700 dark:text-white dark:hover:bg-gray-700 me-6">
+                                            class="text-gray-100 bg-[#28808C] hover:bg-[#3D889B]  border border-gray-200 focus:ring-4 focus:outline-none focus:ring-gray-100 font-medium rounded-lg text-sm px-5 py-2 text-center inline-flex items-center me-6">
                                             <svg xmlns="http://www.w3.org/2000/svg" class="pr-2" width=24 height=24
                                                 viewBox="0 0 448 512"><!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
                                                 <path
@@ -443,7 +379,7 @@
                                 </div>
                                 <div class="overflow-x-auto">
                                     <table id="example-archived" class="max-w-full">
-                                        <thead class="">
+                                        <thead class="bg-[#3D889B]">
                                             <tr>
                                                 <th>No.</th>
                                                 <th><span class="sr-only">Image</span></th>
@@ -455,10 +391,9 @@
                                         </thead>
                                         <tbody>
                                             @foreach ($propertiesArchive as $index => $property)
-                                                <tr
-                                                    class="odd:bg-white odd:dark:bg-gray-300 even:bg-gray-50 even:dark:bg-gray-200 border-b dark:border-gray-600">
+                                                <tr class="border-b odd:bg-white even:bg-gray-50">
                                                     <th scope="row"
-                                                        class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-black">
+                                                        class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap">
                                                         {{ ++$index }}
                                                     </th>
                                                     <td class="p-4">
@@ -708,7 +643,7 @@
                                     </table>
                                 </div>
                             @else
-                                <p class="text-sm text-gray-500 dark:text-gray-400">
+                                <p class="text-sm text-gray-500">
                                     Belum Ada Yang di Arsipkan
                                 </p>
                             @endif
@@ -721,18 +656,17 @@
 </x-app-layout>
 <script>
     $(document).ready(function() {
+        $('#example-archived').DataTable({
+            lengthMenu: [
+                [5, 10, 25, 50, -1],
+                [5, 10, 25, 50, "All"]
+            ],
+        });
         $('#example').DataTable({
             lengthMenu: [
                 [5, 10, 25, 50, -1],
                 [5, 10, 25, 50, "All"]
             ],
-
-            // $('.dataTables_filter').addClass('mt-4 mb-4');
-            // $('#example_filter label').addClass('sr-only');
-            // $('#example_filter input').addClass(
-            //     'w-full px-4 py-2 border rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500'
-            // );
-            // Tambahkan opsi tambahan di sini sesuai kebutuhan
         });
     });
 </script>
