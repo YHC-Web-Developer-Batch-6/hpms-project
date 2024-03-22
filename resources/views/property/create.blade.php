@@ -12,12 +12,13 @@
                     {{-- left --}}
                     <div class="max-w-full">
                         <div class="max-w-full mb-2">
-                            <label for="judul" class="block text-sm font-medium leading-6 text-gray-900">Judul</label>
+                            <label for="judul"
+                                class="block text-sm font-medium leading-6 text-gray-900">Judul</label>
                             <div class="mt-2">
                                 <div
                                     class="flex rounded-md shadow-sm ring-1 ring-inset ring-gray-300 focus-within:ring-2 focus-within:ring-inset focus-within:ring-[#0F4E57] sm:max-w-full">
 
-                                    <input type="text" name="title" id="judul" 
+                                    <input type="text" name="title" id="judul"
                                         class="block flex-1 border-0 bg-transparent py-1.5 pl-1 text-gray-900 placeholder:text-gray-400 focus:ring-0 sm:text-sm sm:leading-6">
                                 </div>
                             </div>
@@ -45,8 +46,7 @@
                                 <div
                                     class="flex rounded-md shadow-sm ring-1 ring-inset ring-gray-300 focus-within:ring-2 focus-within:ring-inset focus-within:ring-[#0F4E57] sm:max-w-full">
 
-                                    <input type="number" name="property_size" id="property_size"
-                                       
+                                    <input type="text" name="property_size" id="property_size"
                                         class="block flex-1 border-0 bg-transparent py-1.5 pl-1 text-gray-900 placeholder:text-gray-400 focus:ring-0 sm:text-sm sm:leading-6">
                                 </div>
                             </div>
@@ -58,7 +58,7 @@
                                 <div
                                     class="flex rounded-md shadow-sm ring-1 ring-inset ring-gray-300 focus-within:ring-2 focus-within:ring-inset focus-within:ring-[#0F4E57] sm:max-w-full">
 
-                                    <input type="number" name="surface_size" id="surface_size" 
+                                    <input type="text" name="surface_size" id="surface_size"
                                         class="block flex-1 border-0 bg-transparent py-1.5 pl-1 text-gray-900 placeholder:text-gray-400 focus:ring-0 sm:text-sm sm:leading-6">
                                 </div>
                             </div>
@@ -73,7 +73,7 @@
                                 <div
                                     class="flex rounded-md shadow-sm ring-1 ring-inset ring-gray-300 focus-within:ring-2 focus-within:ring-inset focus-within:ring-[#0F4E57] sm:max-w-full">
 
-                                    <input type="text" name="certification" id="certification" 
+                                    <input type="text" name="certification" id="certification"
                                         class="block flex-1 border-0 bg-transparent py-1.5 pl-1 text-gray-900 placeholder:text-gray-400 focus:ring-0 sm:text-sm sm:leading-6">
                                 </div>
                             </div>
@@ -106,7 +106,8 @@
                 </div>
                 {{-- textarea --}}
                 <div class="max-w-full">
-                    <label for="description" class="block text-sm font-medium leading-6 text-gray-900">Descriptions</label>
+                    <label for="description"
+                        class="block text-sm font-medium leading-6 text-gray-900">Descriptions</label>
                     <div class="mt-2">
                         <textarea id="description" name="description" rows="4"
                             class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-[#0F4E57] sm:text-sm sm:leading-6"></textarea>
@@ -123,7 +124,7 @@
                                 <div
                                     class="flex rounded-md shadow-sm ring-1 ring-inset ring-gray-300 focus-within:ring-2 focus-within:ring-inset focus-within:ring-[#0F4E57] sm:max-w-full">
 
-                                    <input type="number" name="price" id="price" 
+                                    <input type="text" name="price" id="price"
                                         class="block flex-1 border-0 bg-transparent py-1.5 pl-1 text-gray-900 placeholder:text-gray-400 focus:ring-0 sm:text-sm sm:leading-6">
                                 </div>
                             </div>
@@ -135,7 +136,7 @@
                                 <div
                                     class="flex rounded-md shadow-sm ring-1 ring-inset ring-gray-300 focus-within:ring-2 focus-within:ring-inset focus-within:ring-[#0F4E57] sm:max-w-full">
 
-                                    <input type="text" name="down_payment" id="down_payment" 
+                                    <input type="text" name="down_payment" id="down_payment"
                                         class="block flex-1 border-0 bg-transparent py-1.5 pl-1 text-gray-900 placeholder:text-gray-400 focus:ring-0 sm:text-sm sm:leading-6">
                                 </div>
                             </div>
@@ -147,34 +148,39 @@
                                 Pembayaran</label>
                             <div class="mt-2">
                                 <div class="flex items-center gap-x-3">
-                                    <input id="full-payment" name="installments[]" type="checkbox" value="full_payment"
+                                    <input id="full-payment" name="installments[]" type="checkbox"
+                                        value="full_payment"
                                         class="h-4 w-4 border-gray-300 text-indigo-600 focus:ring-[#0F4E57] checked:bg-[#0F4E57]">
                                     <label for="full-payment"
                                         class="block text-sm font-medium leading-6 text-gray-900">Full Payment</label>
                                 </div>
                                 <div class="flex items-center gap-x-3">
-                                    <input id="cicilan-12-Bulan" name="installments[]" type="checkbox" value="cicilan-12-bulan"
+                                    <input id="cicilan-12-Bulan" name="installments[]" type="checkbox"
+                                        value="cicilan-12-bulan"
                                         class="h-4 w-4 border-gray-300 text-indigo-600 focus:ring-[#0F4E57] checked:bg-[#0F4E57]">
                                     <label for="cicilan-12-Bulan"
                                         class="block text-sm font-medium leading-6 text-gray-900">Cicilan 12
                                         Bulan</label>
                                 </div>
                                 <div class="flex items-center gap-x-3">
-                                    <input id="cicilan-24-bulan" name="installments[]" type="checkbox" value="cicilan-24-bulan"
+                                    <input id="cicilan-24-bulan" name="installments[]" type="checkbox"
+                                        value="cicilan-24-bulan"
                                         class="h-4 w-4 border-gray-300 text-indigo-600 focus:ring-[#0F4E57] checked:bg-[#0F4E57]">
                                     <label for="cicilan-24-bulan"
                                         class="block text-sm font-medium leading-6 text-gray-900">Cicilan 24
                                         Bulan</label>
                                 </div>
                                 <div class="flex items-center gap-x-3">
-                                    <input id="cicilan-48-bulan" name="installments[]" type="checkbox" value="cicilan-48-bulan"
+                                    <input id="cicilan-48-bulan" name="installments[]" type="checkbox"
+                                        value="cicilan-48-bulan"
                                         class="h-4 w-4 border-gray-300 text-indigo-600 focus:ring-[#0F4E57] checked:bg-[#0F4E57]">
                                     <label for="cicilan-48-bulan"
                                         class="block text-sm font-medium leading-6 text-gray-900">Cicilan 48
                                         Bulan</label>
                                 </div>
                                 <div class="flex items-center gap-x-3">
-                                    <input id="cicilan-60-bulan" name="installments[]" type="checkbox" value="cicilan-60-bulan"
+                                    <input id="cicilan-60-bulan" name="installments[]" type="checkbox"
+                                        value="cicilan-60-bulan"
                                         class="h-4 w-4 border-gray-300 text-indigo-600 focus:ring-[#0F4E57] checked:bg-[#0F4E57]">
                                     <label for="cicilan-60-bulan"
                                         class="block text-sm font-medium leading-6 text-gray-900">Cicilan 60
@@ -186,7 +192,8 @@
                 </div>
                 <div class="flex justify-end">
                     <a href="{{ route('property.index') }}" class="text-[##0F4E57]">
-                        <button type="button" class="w-24 h-10 border-2 border-[#0F4E57] rounded-lg me-2">Kembali</button>
+                        <button type="button"
+                            class="w-24 h-10 border-2 border-[#0F4E57] rounded-lg me-2">Kembali</button>
                     </a>
                     <div class="text-white">
                         <button class="w-24 h-10 bg-[#0F4E57] rounded-lg">Submit</button>
@@ -198,3 +205,57 @@
 
     </div>
 </x-app-layout>
+<script>
+    var input1 = document.getElementById('property_size');
+    // Tambahkan event listener untuk input pertama
+    input1.addEventListener('input', function(event) {
+        formatNumberInput(event.target);
+    });
+
+    // Ambil elemen input kedua
+    var input2 = document.getElementById('surface_size');
+    // Tambahkan event listener untuk input kedua
+    input2.addEventListener('input', function(event) {
+        formatNumberInput(event.target);
+    });
+
+    function formatNumberInput(inputElement) {
+        // Menghapus semua karakter selain angka
+        var cleanedValue = event.target.value.replace(/\D/g, '');
+
+        // Format angka dengan menambahkan titik setiap 3 digit
+        var formattedValue = cleanedValue.replace(/\B(?=(\d{3})+(?!\d))/g, '.');
+
+        // Update nilai input dengan nilai yang sudah diformat
+        event.target.value = formattedValue;
+    }
+
+    // Ambil elemen input pertama
+    var input1 = document.getElementById('price');
+    // Tambahkan event listener untuk input pertama
+    input1.addEventListener('input', function(event) {
+        formatNumberInput2(event.target);
+    });
+
+    // Ambil elemen input kedua
+    var input2 = document.getElementById('down_payment');
+    // Tambahkan event listener untuk input kedua
+    input2.addEventListener('input', function(event) {
+        formatNumberInput2(event.target);
+    });
+
+    // Fungsi untuk memformat input angka
+    function formatNumberInput2(inputElement) {
+        // Menghapus semua karakter selain angka
+        var cleanedValue = inputElement.value.replace(/\D/g, '');
+
+        // Format angka dengan menambahkan titik setiap 3 digit
+        var formattedValue = cleanedValue.replace(/\B(?=(\d{3})+(?!\d))/g, '.');
+
+        // Tambahkan teks "Rp." sebelum input angka
+        formattedValue = 'Rp. ' + formattedValue;
+
+        // Update nilai input dengan nilai yang sudah diformat
+        inputElement.value = formattedValue;
+    }
+</script>
