@@ -47,7 +47,6 @@ class PropertyController extends Controller
     {
         try {
             DB::beginTransaction();
-
             $property = Property::create([
                 'user_id' => auth()->user()->id,
                 'title'=> $request->title,
@@ -74,7 +73,7 @@ class PropertyController extends Controller
 
             foreach ($request->installments as $installmentMonth) {
                 $price = intval(preg_replace("/[^0-9]/", "", $property->price));
-                $dp = intval(preg_replace("/[^0-9]/", "", $property->down_payment));
+                $dp = intval(preg_replace("/[^0-9]/", "", $request->down_payment));
     
                 $plafon = $price - $dp;
                 $installmentPrice = ($plafon + ($plafon * 10 / 100)) / intval($installmentMonth);
@@ -129,18 +128,28 @@ class PropertyController extends Controller
                 'title'=> $request->title,
                 'type'=> $request->type,
                 'certification'=> $request->certification,
-                'price'=> $request->price,
+                'price'=> intval(preg_replace("/[^0-9]/", "", $request->price)),
                 'property_size'=> $request->property_size . 'm²',
                 'surface_size'=> $request->surface_size . 'm²',
                 'location'=> $request->location,
                 'description'=> $request->description,
             ]);
-            
+
+            if ($request->hasFile('medias')) {
+                foreach ($request->medias as $media) {
+                    if ($media->isValid()) {
+                        $property->addMedia($media)
+                            ->usingFileName(Str::random(8) . "." . $media->extension())
+                            ->toMediaCollection('property');
+                    }
+                }
+            }
+
             InstallmentItem::where('property_id', $property->id)->delete();
             
             foreach ($request->installments as $installment) {
-                $price = $property->price;
-                $dp = $request->down_payment;
+                $price = intval(preg_replace("/[^0-9]/", "", $property->price));
+                $dp = intval(preg_replace("/[^0-9]/", "", $property->down_payment));
     
                 $plafon = $price - $dp;
                 $cicilan = ($plafon + ($plafon * 10 / 100)) / intval($installment);

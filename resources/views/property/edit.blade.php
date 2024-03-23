@@ -46,7 +46,7 @@
                                 <div
                                     class="flex rounded-md shadow-sm ring-1 ring-inset ring-gray-300 focus-within:ring-2 focus-within:ring-inset focus-within:ring-[#0F4E57] sm:max-w-full">
 
-                                    <input type="number" name="property_size" id="property_size" value="{{ intval($property->property_size) }}" min="1"
+                                    <input type="text" name="property_size" id="property_size" value="{{ intval(preg_replace("/[^0-9]/", "", $property->property_size)) }}" min="1"
                                         class="block flex-1 border-0 bg-transparent py-1.5 pl-1 text-gray-900 placeholder:text-gray-400 focus:ring-0 sm:text-sm sm:leading-6">
                                 </div>
                             </div>
@@ -58,7 +58,7 @@
                                 <div
                                     class="flex rounded-md shadow-sm ring-1 ring-inset ring-gray-300 focus-within:ring-2 focus-within:ring-inset focus-within:ring-[#0F4E57] sm:max-w-full">
 
-                                    <input type="number" name="surface_size" id="surface_size" value="{{ intval($property->surface_size) }}" min="1"
+                                    <input type="text" name="surface_size" id="surface_size" value="{{ intval(preg_replace("/[^0-9]/", "", $property->surface_size)) }}" min="1"
                                         class="block flex-1 border-0 bg-transparent py-1.5 pl-1 text-gray-900 placeholder:text-gray-400 focus:ring-0 sm:text-sm sm:leading-6">
                                 </div>
                             </div>
@@ -86,7 +86,7 @@
                                     class="flex rounded-md shadow-sm ring-1 ring-inset ring-gray-300 focus-within:ring-2 focus-within:ring-inset focus-within:ring-[#0F4E57] sm:max-w-full">
                                     <input
                                         class="block w-full text-sm text-gray-900 border border-gray-300 rounded-lg cursor-pointer bg-gray-50 dark:text-gray-400 focus:outline-none dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400"
-                                        aria-describedby="user_avatar_help" id="dokumentasi" type="file" value="{{ $property->dokumentasi }}">
+                                        aria-describedby="user_avatar_help" id="dokumentasi" name="medias[]" type="file" multiple>
                                 </div>
                             </div>
                         </div>
@@ -125,7 +125,7 @@
                                 <div
                                     class="flex rounded-md shadow-sm ring-1 ring-inset ring-gray-300 focus-within:ring-2 focus-within:ring-inset focus-within:ring-[#0F4E57] sm:max-w-full">
 
-                                    <input type="number" name="price" id="price" min="1" value="{{ $property->price }}"
+                                    <input type="text" name="price" id="price" min="1" value="{{ $property->price }}"
                                         class="block flex-1 border-0 bg-transparent py-1.5 pl-1 text-gray-900 placeholder:text-gray-400 focus:ring-0 sm:text-sm sm:leading-6">
                                 </div>
                             </div>
@@ -137,7 +137,7 @@
                                 <div
                                     class="flex rounded-md shadow-sm ring-1 ring-inset ring-gray-300 focus-within:ring-2 focus-within:ring-inset focus-within:ring-[#0F4E57] sm:max-w-full">
 
-                                    <input type="number" name="down_payment" id="down_payment" min="1" value="{{ $downPayment }}"
+                                    <input type="text" name="down_payment" id="down_payment" min="1" value="{{ $downPayment }}"
                                         class="block flex-1 border-0 bg-transparent py-1.5 pl-1 text-gray-900 placeholder:text-gray-400 focus:ring-0 sm:text-sm sm:leading-6">
                                 </div>
                             </div>
@@ -199,3 +199,70 @@
 
     </div>
 </x-app-layout>
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        var input1 = document.getElementById('property_size');
+        formatNumberInput(input1);
+        var input2 = document.getElementById('surface_size');
+        formatNumberInput(input2);
+        
+        var input1 = document.getElementById('price');
+        formatNumberInput2(input1);
+        var input2 = document.getElementById('down_payment');
+        formatNumberInput2(input2);
+    });
+
+    var input1 = document.getElementById('property_size');
+    // Tambahkan event listener untuk input pertama
+    input1.addEventListener('input', function(event) {
+        var input1 = document.getElementById('property_size');
+        formatNumberInput(event.target);
+    });
+
+    // Ambil elemen input kedua
+    var input2 = document.getElementById('surface_size');
+    // Tambahkan event listener untuk input kedua
+    input2.addEventListener('input', function(event) {
+        formatNumberInput(event.target);
+    });
+
+    function formatNumberInput(inputElement) {
+        // Menghapus semua karakter selain angka
+        var cleanedValue = inputElement.value.replace(/\D/g, '');
+        
+        // Format angka dengan menambahkan titik setiap 3 digit
+        var formattedValue = cleanedValue.replace(/\B(?=(\d{3})+(?!\d))/g, '.');
+
+        // Update nilai input dengan nilai yang sudah diformat
+        inputElement.value = formattedValue;
+    }
+
+    // Ambil elemen input pertama
+    var input1 = document.getElementById('price');
+    // Tambahkan event listener untuk input pertama
+    input1.addEventListener('input', function(event) {
+        formatNumberInput2(event.target);
+    });
+
+    // Ambil elemen input kedua
+    var input2 = document.getElementById('down_payment');
+    // Tambahkan event listener untuk input kedua
+    input2.addEventListener('input', function(event) {
+        formatNumberInput2(event.target);
+    });
+
+    // Fungsi untuk memformat input angka
+    function formatNumberInput2(inputElement) {
+        // Menghapus semua karakter selain angka
+        var cleanedValue = inputElement.value.replace(/\D/g, '');
+
+        // Format angka dengan menambahkan titik setiap 3 digit
+        var formattedValue = cleanedValue.replace(/\B(?=(\d{3})+(?!\d))/g, '.');
+
+        // Tambahkan teks "Rp." sebelum input angka
+        formattedValue = 'Rp. ' + formattedValue;
+
+        // Update nilai input dengan nilai yang sudah diformat
+        inputElement.value = formattedValue;
+    }
+</script>
