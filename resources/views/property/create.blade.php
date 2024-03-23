@@ -188,7 +188,8 @@
                             class="w-24 h-10 border-2 border-[#0F4E57] rounded-lg me-2">Kembali</button>
                     </a>
                     <div class="text-white">
-                        <button class="w-24 h-10 bg-[#0F4E57] rounded-lg">Submit</button>
+                        <button type="submit" 
+                            class="w-24 h-10 bg-[#0F4E57] rounded-lg">Submit</button>
                     </div>
                 </div>
             </form>

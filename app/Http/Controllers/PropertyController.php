@@ -47,12 +47,13 @@ class PropertyController extends Controller
     {
         try {
             DB::beginTransaction();
+
             $property = Property::create([
                 'user_id' => auth()->user()->id,
                 'title'=> $request->title,
                 'type'=> $request->type,
                 'certification'=> $request->certification,
-                'price'=> $request->price,
+                'price'=> intval(preg_replace("/[^0-9]/", "", $request->price)),
                 'property_size'=> $request->property_size . 'm²',
                 'surface_size'=> $request->surface_size . 'm²',
                 'location'=> $request->location,
@@ -64,25 +65,24 @@ class PropertyController extends Controller
             if ($request->hasFile('medias')) {
                 foreach ($request->medias as $media) {
                     if ($media->isValid()) {
-                        $newFileName = Str::random(8) . $media->extension();
-                        $property->addMediaFromRequest('medias')
-                            ->usingFileName($newFileName)
+                        $property->addMedia($media)
+                            ->usingFileName(Str::random(8) . "." . $media->extension())
                             ->toMediaCollection('property');
                     }
                 }
             }
 
-            foreach ($request->installments as $installment) {
-                $price = $property->price;
-                $dp = $request->down_payment;
+            foreach ($request->installments as $installmentMonth) {
+                $price = intval(preg_replace("/[^0-9]/", "", $property->price));
+                $dp = intval(preg_replace("/[^0-9]/", "", $property->down_payment));
     
                 $plafon = $price - $dp;
-                $cicilan = ($plafon + ($plafon * 10 / 100)) / intval($installment);
+                $installmentPrice = ($plafon + ($plafon * 10 / 100)) / intval($installmentMonth);
     
                 InstallmentItem::create([
                     'property_id' => $property->id,
-                    'name' => 'Cicilan ' . $installment . ' bulan',
-                    'price' => intval($cicilan),
+                    'name' => 'Cicilan ' . $installmentMonth . ' bulan',
+                    'price' => intval($installmentPrice),
                     'down_payment' => $request->down_payment,
                 ]);
             }
